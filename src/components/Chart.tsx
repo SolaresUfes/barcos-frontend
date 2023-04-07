@@ -138,10 +138,10 @@ export function Chart(){
 
   return (
 		<div className='w-full h-full'>
-      <LineChart
+      {/* <LineChart
         data={data}
         options={options}>
-      </LineChart>
+      </LineChart> */}
     </div>
   )
 }
