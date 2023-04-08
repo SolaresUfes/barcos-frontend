@@ -31,7 +31,7 @@ export function Sidebar({ menus, display, isRecord=false, setIsRecord }: Sidebar
   
 
   return (
-    <div className={`fixed z-10 bg-blue-950 min-h-screen ${open ? 'w-52' : 'w-16'} duration-500 text-gray-100 px-4  shadow-2xl overflow-y-auto`} >
+    <div className={`relative z-10 bg-blue-950 min-h-screen ${open ? 'w-52' : 'w-16'} duration-500 text-gray-100 px-4  shadow-2xl overflow-y-auto`} >
       <div className='py-3 flex justify-end'>
         <HiMenuAlt3
           className='cursor-pointer text-white text-2xl'

@@ -30,17 +30,17 @@ export function CardDisplayData({
   updateAt,
 }: CardDisplayDataProps) {
   const dataItems = [
-    { label: 'Corrente Motor', value: correnteMotor },
-    { label: 'Corrente Baterias', value: correnteBaterias },
-    { label: 'Corrente MPPT', value: correnteMPPT },
-    { label: 'Tensão Alimentação PCB', value: tensaoAlimentacaoPCB },
-    { label: 'Tensão Entrada MPPT', value: tensaoEntradaMPPT },
-    { label: 'Tensão Saída MPPT', value: tensaoSaidaMPPT },
-    { label: 'Velocidade Barco', value: velocidadeBarco },
-    { label: 'Estado String Solar1', value: estadoStringSolar1 },
-    { label: 'Estado String Solar2', value: estadoStringSolar2 },
-    { label: 'Temperatura', value: temperatura },
-    { label: 'Umidade', value: umidade },
+    { label: 'Corrente Motor', value: correnteMotor, unit: 'A' },
+    { label: 'Corrente Baterias', value: correnteBaterias, unit: 'A' },
+    { label: 'Corrente MPPT', value: correnteMPPT, unit: 'A' },
+    { label: 'Tensão Alimentação PCB', value: tensaoAlimentacaoPCB, unit: 'V' },
+    { label: 'Tensão Entrada MPPT', value: tensaoEntradaMPPT, unit: 'V' },
+    { label: 'Tensão Saída MPPT', value: tensaoSaidaMPPT, unit: 'V' },
+    { label: 'Velocidade Barco', value: velocidadeBarco, unit: 'nós' },
+    { label: 'Estado String Solar1', value: estadoStringSolar1, unit: '' },
+    { label: 'Estado String Solar2', value: estadoStringSolar2, unit: '' },
+    { label: 'Temperatura', value: temperatura, unit: '°C' },
+    { label: 'Umidade', value: umidade, unit: '%' },
   ];
 
   return (
@@ -48,7 +48,7 @@ export function CardDisplayData({
       {dataItems.map((item, index) => (
         <div
           key={index}
-          className="bg-white rounded-sm shadow-md text-center flex flex-col items-center justify-center "
+          className="bg-white rounded-sm shadow-md text-center flex flex-col items-center justify-center"
         >
           {(
             item.label === 'Estado String Solar1' && item.value === '1' 
@@ -61,7 +61,7 @@ export function CardDisplayData({
             )
           }
           {item.label !== 'Estado String Solar1' && item.label !== 'Estado String Solar2' && (
-            <p className="font-bold text-2xl">{item.value}</p>
+            <p className="font-bold text-2xl">{Number(item.value).toFixed(2)} {item.unit}</p>
           )}
           
           <p className="text-gray-600 text-sm">{item.label}</p>

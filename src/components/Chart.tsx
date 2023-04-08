@@ -1,16 +1,16 @@
 import React from "react";
-// import "@carbon/styles/css/styles.css";
 import "@carbon/charts/styles.css";
 import { LineChart } from "@carbon/charts-react";
 
 
 export function Chart(){
-  const scaleTypes = {
+  const ScaleTypes = {
     LABELS: "labels",
-    LINEAR: "linear",
-    LOG: "log",
-    TIME: "time",
-  };
+    LABELS_RATIO: "labels-ratio",
+    LINEAR:"linear",
+    LOG:"log",
+    TIME:"time"
+  }
   
   const data = [
     {
@@ -123,13 +123,13 @@ export function Chart(){
       "bottom": {
         "title": "2019 Annual Sales Figures",
         "mapsTo": "key",
-        "scaleType": scaleTypes.LABELS,
+        "scaleType": ScaleTypes.LABELS
       },
       "left": {
         "mapsTo": "value",
         "title": "Conversion rate",
-        "scaleType": scaleTypes.LINEAR,
-      },
+        "scaleType": ScaleTypes.LINEAR
+      }
     },
     "height": "400px",
   };
@@ -138,10 +138,7 @@ export function Chart(){
 
   return (
 		<div className='w-full h-full'>
-      {/* <LineChart
-        data={data}
-        options={options}>
-      </LineChart> */}
+      <LineChart data={data} options={options as any} />
     </div>
   )
 }
