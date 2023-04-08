@@ -37,8 +37,8 @@ export function CardDisplayData({
     { label: 'Tensão Entrada MPPT', value: tensaoEntradaMPPT, unit: 'V' },
     { label: 'Tensão Saída MPPT', value: tensaoSaidaMPPT, unit: 'V' },
     { label: 'Velocidade Barco', value: velocidadeBarco, unit: 'nós' },
-    { label: 'Estado String Solar1', value: estadoStringSolar1, unit: '' },
-    { label: 'Estado String Solar2', value: estadoStringSolar2, unit: '' },
+    { label: 'Estado String Solar 1', value: estadoStringSolar1, unit: '' },
+    { label: 'Estado String Solar 2', value: estadoStringSolar2, unit: '' },
     { label: 'Temperatura', value: temperatura, unit: '°C' },
     { label: 'Umidade', value: umidade, unit: '%' },
   ];
@@ -48,23 +48,14 @@ export function CardDisplayData({
       {dataItems.map((item, index) => (
         <div
           key={index}
-          className="bg-white rounded-sm shadow-md text-center flex flex-col items-center justify-center"
+          className="bg-white rounded-md shadow-md text-center flex flex-col items-center justify-center"
         >
-          {(
-            item.label === 'Estado String Solar1' && item.value === '1' 
-            || item.label === 'Estado String Solar2' && item.value === '1') 
-          ? (
-            <p className="text-green-500 text-2xl font-bold">ON</p>
-          ):
-            (
-              item.label === 'Estado String Solar1' || item.label === 'Estado String Solar2' && <p className="text-red-500 text-2xl font-bold">OFF</p>
-            )
-          }
-          {item.label !== 'Estado String Solar1' && item.label !== 'Estado String Solar2' && (
-            <p className="font-bold text-2xl">{Number(item.value).toFixed(2)} {item.unit}</p>
-          )}
-          
-          <p className="text-gray-600 text-sm">{item.label}</p>
+          <h2 className={`text-xl lg:text-3xl font-bold ${item.value === 'ON' ? 'text-green-500' : item.value === 'OFF' ? 'text-red-500' : 'text-black'}`}>
+            {(item.value === 'ON' || item.value === 'OFF') ? item.value : parseFloat(item?.value!).toFixed(2)}
+            {item.unit}
+          </h2>
+
+          <p className="text-gray-600 text-[10px] lg:text-sm">{item.label}</p>
         </div>
       ))}
       <p className="col-span-3 text-center text-gray-600 text-sm">
