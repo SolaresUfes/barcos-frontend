@@ -47,12 +47,12 @@ export function Sidebar({ menus, display, isRecord=false, setIsRecord }: Sidebar
         <div>
           { isRecord ? <FiSquare size='20' /> : <FiCircle size='20' /> }
         </div>
-        <h2
+        <h5
           style={{ transitionDelay: `100ms` }}
           className={`whitespace-pre duration-500 ${!open && 'opacity-0 translate-x-28 overflow-hidden'}`}
         >
           {isRecord ? 'Parar gravação' : 'Gravar corrida'}
-        </h2>
+        </h5>
       </div>
 
       <div className='mt-4 flex flex-col gap-4 relative'>
@@ -62,17 +62,17 @@ export function Sidebar({ menus, display, isRecord=false, setIsRecord }: Sidebar
               href={menu?.href}
               key={index}
               title={!open ? menu?.name : undefined}
-              className={`group flex items-center text-sm gap-3 font-medium p-1 transition duration-200 hover:bg-gray-700 rounded-md ${router.pathname === menu?.href && 'bg-gray-900'}`}
+              className={`text-white group flex items-center text-sm gap-3 font-medium p-1 transition duration-200 hover:bg-gray-700 rounded-md ${router.pathname === menu?.href && 'bg-gray-900'}`}
             >
               <div>
                 {React.createElement(menu?.icon, { size: '20' })}
               </div>
-              <h2
+              <h5
                 style={{ transitionDelay: `${index + 3}00ms` }}
-                className={`whitespace-pre duration-500 ${!open && 'opacity-0 translate-x-28 overflow-hidden'}`}
+                className={`font-normal whitespace-pre duration-500 ${!open && 'opacity-0 translate-x-28 overflow-hidden'}`}
               >
                 {menu?.name}
-              </h2>
+              </h5>
             </Link>
           ))
         }
@@ -90,12 +90,12 @@ export function Sidebar({ menus, display, isRecord=false, setIsRecord }: Sidebar
         <div>
           {React.createElement(FiLogOut, { size: '20' })}
         </div>
-        <h2
+        <h5
           style={{ transitionDelay: `100ms` }}
           className={`whitespace-pre duration-500 ${!open && 'opacity-0 translate-x-28 overflow-hidden'}`}
         >
           Deslogar
-        </h2>
+        </h5>
       </div>
     </div>
   )

@@ -50,10 +50,9 @@ export function CardDisplayData({
           key={index}
           className="bg-white rounded-md shadow-md text-center flex flex-col items-center justify-center"
         >
-          <h2 className={`text-xl lg:text-3xl font-bold ${item.value === 'ON' ? 'text-green-500' : item.value === 'OFF' ? 'text-red-500' : 'text-black'}`}>
-            {(item.value === 'ON' || item.value === 'OFF') ? item.value : parseFloat(item?.value!).toFixed(2)}
-            {item.unit}
-          </h2>
+          <h3 className={`text-xl lg:text-3xl font-bold ${item.value === 'ON' ? 'text-green-500' : item.value === 'OFF' ? 'text-red-500' : 'text-black'}`}>
+            {(item.value === 'ON' || item.value === 'OFF') ? item.value : parseFloat(item?.value!).toFixed(2)} {item.unit}
+          </h3>
 
           <p className="text-gray-600 text-[10px] lg:text-sm">{item.label}</p>
         </div>

@@ -1,9 +1,11 @@
 import { CardDisplayData } from "@/components/CardDisplayData";
 import { Chart } from "@/components/Chart";
+import { dadosBarco } from "@/mock/dados";
 
 export default function Home() {
+
   return (
-    <div className='flex bg-slate-200 w-full flex-col items-center justify-center min-h-screen p-4 gap-4'>
+    <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4'>
       <iframe
         src="https://dsbrastreio.com.br/"
         width="100%"
@@ -28,7 +30,7 @@ export default function Home() {
           />
         </div>
         <div className='w-full h-auto md:h-full mt-4 md:mt-0'>
-          <Chart />
+          {dadosBarco && <Chart dadosBarco={dadosBarco} />}
         </div>
       </div>
     </div>      
