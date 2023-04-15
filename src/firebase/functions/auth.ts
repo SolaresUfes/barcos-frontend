@@ -20,6 +20,7 @@ export async function handleSubmitLoginGoogle() {
     else {
       console.log("Usuário não autorizado!");
       await handleLogout();
+      window.location.reload();
     }
   }).catch((error) => {
     // const errorCode = error.code;

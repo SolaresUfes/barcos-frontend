@@ -9,9 +9,7 @@ export default function Files() {
     const result = await getFile(fileName);
     console.log(result);
     if (result !== undefined) {
-      const response = await fetch(result, {
-        mode: 'no-cors'
-      });
+      const response = await fetch(result);
       console.log(response);
       const data = await response.text();
       const element = document.createElement("a");
