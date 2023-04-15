@@ -1,33 +1,33 @@
 import React from 'react';
 
 interface CardDisplayDataProps {
-  correnteMotor: string;
-  correnteBaterias: string;
-  temperatura: string;
-  umidade: string;
-  tensaoAlimentacaoPCB: string;
+  correnteMotor?: string;
+  correnteBaterias?: string;
+  temperatura?: string;
+  umidade?: string;
+  tensaoAlimentacaoPCB?: string;
   velocidadeBarco?: string;
-  estadoStringSolar1: string;
-  estadoStringSolar2: string;
-  tensaoSaidaMPPT: string;
-  tensaoEntradaMPPT: string;
-  correnteMPPT: string;
-  updateAt: string;
+  estadoStringSolar1?: string;
+  estadoStringSolar2?: string;
+  tensaoSaidaMPPT?: string;
+  tensaoEntradaMPPT?: string;
+  correnteMPPT?: string;
+  updateAt?: string;
 }
 
 export function CardDisplayData({
-  correnteMotor,
-  correnteBaterias,
-  temperatura,
-  umidade,
-  tensaoAlimentacaoPCB,
-  velocidadeBarco,
-  estadoStringSolar1,
-  estadoStringSolar2,
-  tensaoSaidaMPPT,
-  tensaoEntradaMPPT,
-  correnteMPPT,
-  updateAt,
+  correnteMotor = '0',
+  correnteBaterias = '0',
+  temperatura = '0',
+  umidade = '0',
+  tensaoAlimentacaoPCB = '0',
+  velocidadeBarco = '0',
+  estadoStringSolar1 = 'OFF',
+  estadoStringSolar2 = 'OFF',
+  tensaoSaidaMPPT = '0',
+  tensaoEntradaMPPT = '0',
+  correnteMPPT = '0',
+  updateAt = '0',
 }: CardDisplayDataProps) {
   const dataItems = [
     { label: 'Corrente Motor', value: correnteMotor, unit: 'A' },

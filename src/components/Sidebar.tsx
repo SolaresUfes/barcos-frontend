@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { FiLogOut, FiSquare, FiCircle } from 'react-icons/fi';
 import { HiMenuAlt3 } from 'react-icons/hi';
-// import { handleLogout } from '../firebase/functions/auth';
-import { useWindowSize } from '../utils/screen';
+import { handleLogout } from '@/firebase/functions/auth';
+import { useWindowSize } from '@/utils/screen';
 
 interface SidebarProps {
   menus?: {
@@ -41,7 +41,7 @@ export function Sidebar({ menus, display, isRecord=false, setIsRecord }: Sidebar
 
       <div
         title="Gravar corrida"
-        className={`w-5/6 group flex items-center text-sm gap-3 font-medium p-1 rounded-md transition duration-200 hover:bg-gray-700 cursor-pointer ${isRecord ? 'text-red-500' : 'text-green-500'}`}
+        className={`w-full group flex items-center text-sm gap-3 font-medium p-1 rounded-md transition duration-200 hover:bg-gray-700 cursor-pointer ${isRecord ? 'text-red-500' : 'text-green-500'}`}
         onClick={setIsRecord}
       >
         <div>
@@ -81,9 +81,9 @@ export function Sidebar({ menus, display, isRecord=false, setIsRecord }: Sidebar
         title="Deslogar"
         className={`absolute bottom-4 w-5/6 group flex items-center text-sm gap-3 font-medium p-1 rounded-md transition duration-200 hover:bg-gray-700 cursor-pointer`}
         onClick={
-          () => {
-            // handleLogout();
-            router.push('/');
+          async () => {
+            await handleLogout();
+            window.location.reload();
           }
         }
       >

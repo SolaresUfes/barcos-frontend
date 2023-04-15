@@ -1,5 +1,6 @@
 import React from "react";
-import { LineChart } from "@carbon/charts-react";
+import dynamic from "next/dynamic";
+const LineChart = dynamic(() => import("@carbon/charts-react").then((mod) => mod.LineChart), { ssr: false });
 import "@carbon/styles/css/styles.css";
 import "@carbon/charts/styles.css";
 import { transformData } from "@/utils/chart";
@@ -10,7 +11,7 @@ interface LineChartComponentProps {
   dadosBarco: DadosBarco[];
 }
 
-export function Chart({ dadosBarco }: LineChartComponentProps) {
+export function Chart({ dadosBarco = [] }: LineChartComponentProps) {
   const data = transformData(dadosBarco)
 
   const options = {
@@ -27,6 +28,7 @@ export function Chart({ dadosBarco }: LineChartComponentProps) {
         scaleType: "linear",
       },
     },
+    animations: false,
     height: "400px",
   };
 
@@ -34,7 +36,7 @@ export function Chart({ dadosBarco }: LineChartComponentProps) {
 
   return (
     <div className="w-full h-full">
-      <LineChart data={data} options={options as any} />
+      {dadosBarco.length > 0 && <LineChart data={data} options={options as any} />}
     </div>
   );
 };

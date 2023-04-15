@@ -5,5 +5,5 @@ import { AiOutlineHome } from 'react-icons/ai';
 export const menus = [
   { name: "Home", href: "/", icon: AiOutlineHome },
   { name: "Usuários", href: "/users", icon: AiOutlineUser },
-  { name: "Histórico", href: "/history", icon: FiFolder },
+  { name: "Histórico", href: "/files", icon: FiFolder },
 ]
