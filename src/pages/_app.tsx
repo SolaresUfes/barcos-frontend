@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </span>
           </button>
         </div>
-        <div className="h-full w-full bg-[#050758] flex flex-col items-center justify-center">
+        <div className="h-full hidden sm:flex w-full bg-[#050758]  flex-col items-center justify-center">
           <img
             src="https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/550/364550/v9bPQxy0/cfcafd65777e43dcacfbf8df13381dba"
             width="80%"
