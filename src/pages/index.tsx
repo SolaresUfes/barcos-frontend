@@ -4,6 +4,7 @@ import { Chart } from "@/components/Chart";
 import socket from "@/services/socketio";
 import { DadosBarco } from "@/types/ChartData";
 import { useEffect, useState } from "react";
+import ThemeToggle from "../components/ThemeToggle";
 
 export default function Home() {
   const [dadoAtualBarco, setDadoAtualBarco] = useState<DadosBarco | undefined>(undefined);
@@ -18,7 +19,9 @@ export default function Home() {
   }, [])
 
   return (
+    
     <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'>
+      <ThemeToggle />
       <iframe
         src="https://dsbrastreio.com.br/"
         width="100%"
@@ -40,3 +43,5 @@ export default function Home() {
     </div>      
   )
 }
+
+

@@ -54,10 +54,10 @@ export function CardDisplayData({
             {(item.value === 'ON' || item.value === 'OFF') ? item.value : parseFloat(item?.value!).toFixed(2)} {item.unit}
           </h3>
 
-          <p className="text-gray-600 text-[10px] lg:text-sm">{item.label}</p>
+          <p className="text-gray-900 text-[10px] lg:text-sm" >{item.label}</p>
         </div>
       ))}
-      <p className="col-span-3 text-center text-gray-600 text-sm">
+      <p className="col-span-3 text-center text-sm">
         <span className="font-bold">Última atualização: </span>
         {updateAt}
       </p>
