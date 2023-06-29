@@ -15,7 +15,14 @@ export default function Home() {
     socket.on('info', (dados: DadosBarco) => {
       // console.log(dados);
       setDadoAtualBarco(dados);
-      setDadosBarco((old) => [...old, dados].slice(-50)); // Limita o tamanho do array a 25 elementos
+      
+      // dadosBarcos vai ter somente os últimos 25 dados
+      setDadosBarco((dadosBarcos) => {
+        if (dadosBarcos.length >= 25) {
+          return [...dadosBarcos.slice(1), dados];
+        }
+        return [...dadosBarcos, dados];
+      });
     });
   }, [])
 
