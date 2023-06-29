@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { UsersCard } from "@/components/UsersCard";
+import { UsersCard } from "../components/UsersCard";
 import { getAllInfoCollectionRealTime, saveInfoCollection } from "@/firebase/functions/firestore";
 import { AlertAddEmail } from "@/utils/popups";
 

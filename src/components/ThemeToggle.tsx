@@ -1,5 +1,3 @@
-// ./components/ThemeToggle.js
-
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
@@ -19,7 +17,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="focus:outline-none"
+      className="focus:outline-none absolute top-4 right-4"
       onClick={() => setTheme(isDark() ? "light" : "dark")}
       aria-label="Theme toggle"
     >

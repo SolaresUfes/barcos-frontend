@@ -1,10 +1,11 @@
 import { CardDisplayData } from "@/components/CardDisplayData";
 import { Chart } from "@/components/Chart";
+import { Chat } from "@/components/Chat";
+import ThemeToggle from "@/components/ThemeToggle";
 // import { dadosBarco } from "@/mock/dados";
 import socket from "@/services/socketio";
 import { DadosBarco } from "@/types/ChartData";
 import { useEffect, useState } from "react";
-import ThemeToggle from "../components/ThemeToggle";
 
 export default function Home() {
   const [dadoAtualBarco, setDadoAtualBarco] = useState<DadosBarco | undefined>(undefined);
@@ -40,6 +41,7 @@ export default function Home() {
           {dadosBarco && <Chart dadosBarco={dadosBarco} />}
         </div>
       </div>
+      <Chat />
     </div>      
   )
 }
