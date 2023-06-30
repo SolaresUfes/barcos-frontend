@@ -1,6 +1,6 @@
 import { DadosBarco } from "@/types/ChartData";
 
-export const transformData = (dadosBarco: DadosBarco[]) => {
+export const transformDataChart = (dadosBarco: DadosBarco[]) => {
   const dados = dadosBarco.flatMap((item, index) => {
     // item.updateAt = "07/04/2023 21:57:23" get only 21:57:23
     const time = item.updateAt.split(" ")[1];

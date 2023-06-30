@@ -12,3 +12,10 @@ export interface DadosBarco {
   velocidadeBarco?: string;
   updateAt: string;
 }
+
+
+export interface ChartData {
+  group: string;
+  key: string;
+  value: number;
+}

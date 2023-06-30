@@ -6,7 +6,7 @@ interface CardDisplayDataProps {
   temperatura?: string;
   umidade?: string;
   tensaoAlimentacaoPCB?: string;
-  velocidadeBarco?: string;
+  velocidade?: string;
   estadoStringSolar1?: string;
   estadoStringSolar2?: string;
   tensaoSaidaMPPT?: string;
@@ -21,7 +21,7 @@ export function CardDisplayData({
   temperatura = '0',
   umidade = '0',
   tensaoAlimentacaoPCB = '0',
-  velocidadeBarco = '0',
+  velocidade = '0',
   estadoStringSolar1 = 'OFF',
   estadoStringSolar2 = 'OFF',
   tensaoSaidaMPPT = '0',
@@ -36,7 +36,7 @@ export function CardDisplayData({
     { label: 'Tensão Alimentação PCB', value: tensaoAlimentacaoPCB, unit: 'V' },
     { label: 'Tensão Entrada MPPT', value: tensaoEntradaMPPT, unit: 'V' },
     { label: 'Tensão Saída MPPT', value: tensaoSaidaMPPT, unit: 'V' },
-    { label: 'Velocidade Barco', value: velocidadeBarco, unit: 'nós' },
+    { label: 'Velocidade Barco', value: velocidade, unit: 'nós' },
     { label: 'Estado String Solar 1', value: estadoStringSolar1, unit: '' },
     { label: 'Estado String Solar 2', value: estadoStringSolar2, unit: '' },
     { label: 'Temperatura', value: temperatura, unit: '°C' },
@@ -45,7 +45,7 @@ export function CardDisplayData({
 
   return (
     <div className="grid grid-cols-3 gap-4 h-full">
-      {dataItems.map((item, index) => (
+      {dataItems?.map((item, index) => (
         <div
           key={index}
           className="bg-white rounded-md shadow-md text-center flex flex-col items-center justify-center"
