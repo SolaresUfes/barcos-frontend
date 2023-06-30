@@ -33,6 +33,13 @@ export function Chart({ data = [] }: LineChartComponentProps) {
     height: "400px",
     data: {
       loading: data.length === 0,
+    },
+    color: {
+      scale: {
+        "Corrente Motor": "#744fff",
+        "Corrente Baterias": "#ff9149",
+        // Terminar de colocar as cores aqui
+      }
     }
   };
 
