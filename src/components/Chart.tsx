@@ -36,9 +36,13 @@ export function Chart({ data = [] }: LineChartComponentProps) {
     },
     color: {
       scale: {
-        "Corrente Motor": "#744fff",
-        "Corrente Baterias": "#ff9149",
-        // Terminar de colocar as cores aqui
+        "Corrente Motor": "#FA8072	",
+        "Corrente Baterias": "#006400",
+        "Tensão Entrada MPPT": "#8B4513",
+        "Tensão Saída MPPT": "#4B0082	",
+        "Tensão Alimentação PCB":"#DC143C	",
+        "Velocidade Barco": "#3CB371	",
+        "Corrente MPPT": "#1E90FF"
       }
     }
   };

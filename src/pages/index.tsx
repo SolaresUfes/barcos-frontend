@@ -48,13 +48,15 @@ export default function Home() {
   return (
     
     <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'>
+      <div>
+        <ThemeToggle />
+      </div>
       <Head>
         <title>Telemetria POENTE</title>
         <meta name="description" content="Exibindo dados em tempo real do barco POENTE" />
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <ThemeToggle />
       <iframe
         src="https://dsbrastreio.com.br/"
         width="100%"
