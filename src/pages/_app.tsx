@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { getAllInfoCollection } from "../firebase/functions/firestore";
 import { ThemeProvider } from "next-themes";
 
+
 export default function App({ Component, pageProps }: AppProps) {
   const [recordStatus, setRecordStatus] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -55,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
             {erroAutenticacao && <span className="flex items-center justify-center text-red-600 font-bold">Usuário não cadastrado!</span>}
           </div>
         </div>
-        <div className="h-full hidden sm:flex w-full bg-[#050758]  flex-col items-center justify-center">
+        <div className="h-full w-full bg-[#050758] flex flex-col items-center justify-center">
           <img
             src="https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/550/364550/v9bPQxy0/cfcafd65777e43dcacfbf8df13381dba"
             width="80%"
