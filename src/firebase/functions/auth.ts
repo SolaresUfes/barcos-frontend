@@ -10,17 +10,15 @@ const provider = new GoogleAuthProvider();
 
 export async function handleSubmitLoginGoogle() {
   signInWithPopup(auth, provider)
-  .then( async (result) => {
+  .then(async (result) => {
     const user = result.user;
     const autorizatedUsers = await getAllInfoCollection("users");
     const userIsAutorizated = autorizatedUsers?.find((userAutorizated: any) => userAutorizated.email === user?.email);
     if (userIsAutorizated) {
       console.log("Usuário autorizado!");
-    }
-    else {
+    } else {
       console.log("Usuário não autorizado!");
       await handleLogout();
-      window.location.reload();
     }
   }).catch((error) => {
     // const errorCode = error.code;
