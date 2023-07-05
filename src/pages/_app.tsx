@@ -7,6 +7,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useState, useEffect } from "react";
 import { getAllInfoCollection } from "../firebase/functions/firestore";
+import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [recordStatus, setRecordStatus] = useState(false);
@@ -54,7 +55,7 @@ export default function App({ Component, pageProps }: AppProps) {
             {erroAutenticacao && <span className="flex items-center justify-center text-red-600 font-bold">Usuário não cadastrado!</span>}
           </div>
         </div>
-        <div className="h-full hidden md:flex w-full bg-[#050758]  flex-col items-center justify-center">
+        <div className="h-full hidden sm:flex w-full bg-[#050758]  flex-col items-center justify-center">
           <img
             src="https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/550/364550/v9bPQxy0/cfcafd65777e43dcacfbf8df13381dba"
             width="80%"
@@ -67,7 +68,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <div className="flex bg-slate-100">
+    <div className="flex">
       <Sidebar
         display={true}
         menus={menus}
@@ -76,7 +77,10 @@ export default function App({ Component, pageProps }: AppProps) {
           socket.emit("record");
         }}
       />
-      <Component {...pageProps} />
+    <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+
     </div>
   );
 }
