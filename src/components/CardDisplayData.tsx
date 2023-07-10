@@ -13,6 +13,11 @@ interface CardDisplayDataProps {
   tensaoEntradaMPPT?: string;
   correnteMPPT?: string;
   updateAt?: string;
+  potenciaSaidaMPPT?:string;
+  potenciaEntradaMPPT?:string;
+  potenciaMotor?:string;
+  potenciaBateria?:string;
+
 }
 
 export function CardDisplayData({
@@ -28,6 +33,11 @@ export function CardDisplayData({
   tensaoEntradaMPPT = '0',
   correnteMPPT = '0',
   updateAt = '0',
+  potenciaSaidaMPPT= correnteMPPT * tensaoSaidaMPPT,
+  potenciaEntradaMPPT= correnteMPPT * tensaoEntradaMPPT,
+  potenciaMotor  = correnteMotor * tensaoSaidaMPPT,
+  potenciaBateria = correnteBaterias * tensaoSaidaMPPT,
+
 }: CardDisplayDataProps) {
   const dataItems = [
     { label: 'Corrente Motor', value: correnteMotor, unit: 'A' },
@@ -41,6 +51,12 @@ export function CardDisplayData({
     { label: 'Estado String Solar 2', value: estadoStringSolar2, unit: '' },
     { label: 'Temperatura', value: temperatura, unit: '°C' },
     { label: 'Umidade', value: umidade, unit: '%' },
+    { label: 'Potência Entregue pela Geração', value: potenciaSaidaMPPT, unit: 'W' },
+    { label: 'Potência Bruta Gerada', value: potenciaEntradaMPPT, unit: 'W' },
+    { label: 'Potência do Motor', value: potenciaMotor, unit: 'W' },
+    { label: 'Potência da Bateria', value: potenciaBateria, unit: 'W' },
+
+
   ];
 
   return (

@@ -43,6 +43,10 @@ export function Chart({ data = [] }: LineChartComponentProps) {
         "Tensão Alimentação PCB":"#DC143C	",
         "Velocidade Barco": "#3CB371	",
         "Corrente MPPT": "#1E90FF"
+        //"potenciaSaidaMPPT" : "#FA8072",
+        //"potenciaEntradaMPPT" : "#FA8072",
+       //"potenciaMotor" : "#FA8072",
+       //"potenciaBateria" : "#FA8072"
       }
     }
   };

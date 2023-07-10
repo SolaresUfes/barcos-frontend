@@ -11,6 +11,15 @@ export interface DadosBarco {
   correnteMPPT: string;
   velocidadeBarco?: string;
   updateAt: string;
+  //potenciaSaidaMPPT?:string;
+  //potenciaEntradaMPPT?:string;
+  //potenciaMotor?:string;
+  //potenciaBateria?:string;
+
+  //potenciaSaidaMPPT= correnteMPPT * tensaoSaidaMPPT,
+  //potenciaEntradaMPPT= correnteMPPT * tensaoEntradaMPPT,
+  //potenciaMotor  = correnteMotor * tensaoSaidaMPPT,
+ // potenciaBateria = correnteBaterias * tensaoSaidaMPPT,
 }
 
 
