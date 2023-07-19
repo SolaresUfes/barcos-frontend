@@ -33,10 +33,12 @@ export function CardDisplayData({
   tensaoEntradaMPPT = '0',
   correnteMPPT = '0',
   updateAt = '0',
-  potenciaSaidaMPPT = (correnteMPPT * tensaoSaidaMPPT).toString(),
-  potenciaEntradaMPPT= (correnteMPPT * tensaoEntradaMPPT).toString(),
-  potenciaMotor  = (correnteMotor * tensaoSaidaMPPT).toString(),
-  potenciaBateria = (correnteBaterias * tensaoSaidaMPPT).toString(),
+  potenciaSaidaMPPT = (parseFloat(correnteMPPT) * parseFloat(tensaoSaidaMPPT)).toString(),
+  potenciaEntradaMPPT = (parseFloat(correnteMPPT) * parseFloat(tensaoEntradaMPPT)).toString(),
+  potenciaMotor = (parseFloat(correnteMotor) * parseFloat(tensaoSaidaMPPT)).toString(),
+  potenciaBateria = (parseFloat(correnteBaterias) * parseFloat(tensaoSaidaMPPT)).toString(),
+  
+  
 
 }: CardDisplayDataProps) {
   const dataItems = [
