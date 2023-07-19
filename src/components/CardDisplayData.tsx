@@ -33,10 +33,10 @@ export function CardDisplayData({
   tensaoEntradaMPPT = '0',
   correnteMPPT = '0',
   updateAt = '0',
-  potenciaSaidaMPPT= correnteMPPT * tensaoSaidaMPPT,
-  potenciaEntradaMPPT= correnteMPPT * tensaoEntradaMPPT,
-  potenciaMotor  = correnteMotor * tensaoSaidaMPPT,
-  potenciaBateria = correnteBaterias * tensaoSaidaMPPT,
+  potenciaSaidaMPPT = `${correnteMPPT * tensaoSaidaMPPT}`,
+  potenciaEntradaMPPT= `${correnteMPPT * tensaoEntradaMPPT}`,
+  potenciaMotor  = `${correnteMotor * tensaoSaidaMPPT}`,
+  potenciaBateria = `${correnteBaterias * tensaoSaidaMPPT}`,
 
 }: CardDisplayDataProps) {
   const dataItems = [
