@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 
-const Dropdown = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+interface DropdownProps {
+  onChange: (selectedOption: string) => void;
+}
 
-  const dropdownStyle = {
-    border: '1px solid #ccc', 
+const Dropdown: React.FC<DropdownProps> = ({ onChange }) => {
+  const [selectedOption, setSelectedOption] = useState<string>('');
+
+  const dropdownStyle: React.CSSProperties = {
+    border: '1px solid #ccc',
     borderRadius: '9px',
     textAlign: 'center',
+  };
 
-};
-
-  const handleChange = (e) => {
-    setSelectedOption(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedOption(value);
+    onChange(value); // Chama a função onChange passada como prop para atualizar o estado no componente pai.
   };
 
   return (
@@ -20,7 +25,7 @@ const Dropdown = () => {
         id="dropdown"
         value={selectedOption}
         onChange={handleChange}
-        style={dropdownStyle} 
+        style={dropdownStyle}
       >
         <option value="">-- Escolha o Piloto --</option>
         <option value="Davi Agatti">Davi Agatti</option>

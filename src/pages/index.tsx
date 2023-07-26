@@ -3,7 +3,7 @@ import { Chart } from "@/components/Chart";
 import { Chat } from "@/components/Chat";
 import ThemeToggle from "@/components/ThemeToggle";
 import Dropdown from '@/components/Dropdown';
-
+import { selectedOption } from  '@/components/Dropdown';
 import socket from "@/services/socketio";
 import { ChartData, DadosBarco } from "@/types/ChartData";
 import { transformDataChart } from "@/utils/chart";
@@ -18,6 +18,7 @@ export default function Home() {
   const [dataForChart, setDataForChart] = useState<ChartData[]>([]);
   const [dataForChat, setDataForChat] = useState<string>("Sem dados do POENTE");
   const [speed, setSpeed] = useState<string>("0");
+  //const [nomePiloto, setNome] = useState<string>("default");
 
   useEffect(() => {
     socket.on('info', (dados: DadosBarco) => {
@@ -36,6 +37,12 @@ export default function Home() {
     socket.on('speedInfo', (speed) => {
       setSpeed(speed);
     });
+
+    //socket on para o piloto
+   // socket.on('pilotoInfo', (nomePiloto) => {
+       // console.log(nomePiloto);
+     // setNome(nomePiloto);
+    //});
   }, [])
 
   useEffect(() => {
@@ -47,11 +54,20 @@ export default function Home() {
 
   }, [dadosBarco])
 
+
+  //aqui tem a string do piloto 
+  const [selectedOption, setSelectedOption] = useState<string>('');
+  const handleDropdownChange = (selectedOption: string) => {
+    setSelectedOption(selectedOption);
+  };
+  
   return (
     
-    <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'>
+    <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'> 
+     
       <div>
-        <Dropdown />
+        <Dropdown onChange={handleDropdownChange} />
+      <p>Opção selecionada(irei apagar): {selectedOption}</p>  
         <ThemeToggle />
       </div>
       <Head>
