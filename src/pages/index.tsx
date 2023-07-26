@@ -2,6 +2,8 @@ import { CardDisplayData } from "@/components/CardDisplayData";
 import { Chart } from "@/components/Chart";
 import { Chat } from "@/components/Chat";
 import ThemeToggle from "@/components/ThemeToggle";
+import Dropdown from '@/components/Dropdown';
+
 import socket from "@/services/socketio";
 import { ChartData, DadosBarco } from "@/types/ChartData";
 import { transformDataChart } from "@/utils/chart";
@@ -49,6 +51,7 @@ export default function Home() {
     
     <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'>
       <div>
+        <Dropdown />
         <ThemeToggle />
       </div>
       <Head>
