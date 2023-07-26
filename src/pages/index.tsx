@@ -3,7 +3,6 @@ import { Chart } from "@/components/Chart";
 import { Chat } from "@/components/Chat";
 import ThemeToggle from "@/components/ThemeToggle";
 import Dropdown from '@/components/Dropdown';
-import { selectedOption } from  '@/components/Dropdown';
 import socket from "@/services/socketio";
 import { ChartData, DadosBarco } from "@/types/ChartData";
 import { transformDataChart } from "@/utils/chart";
