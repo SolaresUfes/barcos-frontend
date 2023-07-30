@@ -67,7 +67,6 @@ export default function Home() {
 
       <div>
         <Dropdown onChange={handleDropdownChange} />
-        <p>Opção selecionadoo  test (irei apagar): {selectedOption}</p>
         <ThemeToggle />
       </div>
       <Head>
