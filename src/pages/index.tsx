@@ -23,7 +23,7 @@ export default function Home() {
     socket.on('info', (dados: DadosBarco) => {
       // console.log(dados);
       setDadoAtualBarco(dados);
-      
+
       // dadosBarcos vai ter somente os últimos 25 dados
       setDadosBarco((dadosBarcos) => {
         if (dadosBarcos.length >= 25) {
@@ -38,10 +38,10 @@ export default function Home() {
     });
 
     //socket on para o piloto
-   // socket.on('pilotoInfo', (nomePiloto) => {
-       // console.log(nomePiloto);
-     // setNome(nomePiloto);
-    //});
+    socket.on('nameInfo', (namePilot) => {
+      // console.log(nomePiloto);
+      setSelectedOption(namePilot);
+    });
   }, [])
 
   useEffect(() => {
@@ -58,15 +58,16 @@ export default function Home() {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const handleDropdownChange = (selectedOption: string) => {
     setSelectedOption(selectedOption);
+    socket.emit("newName", selectedOption);
   };
-  
+
   return (
-    
-    <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'> 
-     
+
+    <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'>
+
       <div>
         <Dropdown onChange={handleDropdownChange} />
-      <p>Opção selecionada(irei apagar): {selectedOption}</p>  
+        <p>Opção selecionadoo  test (irei apagar): {selectedOption}</p>
         <ThemeToggle />
       </div>
       <Head>
@@ -94,8 +95,8 @@ export default function Home() {
           <Chart data={dataForChart} />
         </div>
       </div>
-      <Chat dadosBarco={dataForChat}/>
-    </div>      
+      <Chat dadosBarco={dataForChat} />
+    </div>
   )
 }
 
