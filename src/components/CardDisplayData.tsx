@@ -27,8 +27,8 @@ export function CardDisplayData({
   umidade = '0',
   tensaoAlimentacaoPCB = '0',
   velocidade = '0',
-  estadoStringSolar1 = 'OFF',
-  estadoStringSolar2 = 'OFF',
+  estadoStringSolar1 = '0',
+  estadoStringSolar2 = '0',
   tensaoSaidaMPPT = '0',
   tensaoEntradaMPPT = '0',
   correnteMPPT = '0',
@@ -49,8 +49,8 @@ export function CardDisplayData({
     { label: 'Tensão Entrada MPPT', value: tensaoEntradaMPPT, unit: 'V' },
     { label: 'Tensão Saída MPPT', value: tensaoSaidaMPPT, unit: 'V' },
     { label: 'Velocidade Barco', value: velocidade, unit: 'nós' },
-    { label: 'Estado String Solar 1', value: estadoStringSolar1, unit: '' },
-    { label: 'Estado String Solar 2', value: estadoStringSolar2, unit: '' },
+    { label: 'Estado String Solar 1', value: estadoStringSolar1, unit: 'A' },
+    { label: 'Estado String Solar 2', value: estadoStringSolar2, unit: 'A' },
     { label: 'Temperatura', value: temperatura, unit: '°C' },
     { label: 'Umidade', value: umidade, unit: '%' },
     { label: 'Potência Entregue pela Geração', value: potenciaSaidaMPPT, unit: 'W' },
@@ -68,8 +68,8 @@ export function CardDisplayData({
           key={index}
           className="bg-white rounded-md shadow-md text-center flex flex-col items-center justify-center"
         >
-          <h3 className={`text-xl lg:text-3xl font-bold ${item.value === 'ON' ? 'text-green-500' : item.value === 'OFF' ? 'text-red-500' : 'text-black'}`}>
-            {(item.value === 'ON' || item.value === 'OFF') ? item.value : parseFloat(item?.value!).toFixed(2)} {item.unit}
+          <h3 className={`text-xl lg:text-3xl font-bold text-black`}>
+            {parseFloat(item?.value!).toFixed(2)} {item.unit}
           </h3>
 
           <p className="text-gray-900 text-[10px] lg:text-sm" >{item.label}</p>

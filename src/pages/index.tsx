@@ -85,8 +85,6 @@ export default function Home() {
         <div className='w-full md:w-3/4 h-full md:h-full'>
           <CardDisplayData
             {...dadoAtualBarco}
-            estadoStringSolar1={dadoAtualBarco?.estadoStringSolar1 == "1" ? 'ON' : 'OFF'}
-            estadoStringSolar2={dadoAtualBarco?.estadoStringSolar2 == "1" ? 'ON' : 'OFF'}
             velocidade={speed}
           />
         </div>
