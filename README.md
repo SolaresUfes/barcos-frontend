@@ -88,8 +88,19 @@ Esses estados serão usados para controlar o status de gravação, o estado de a
 O arquivo _document.tsx é usado para controlar o HTML que será renderizado no lado do servidor. É neste arquivo que você pode adicionar meta tags, scripts, estilos e outros elementos que serão compartilhados por todas as páginas da sua aplicação.
 O componente Head é usado para definir as configurações do cabeçalho HTML, como links para folhas de estilo, links para ícones e meta informações. O componente Html define a estrutura básica do HTML, incluindo a linguagem da página.
 
+(Em nosso projeto utilizamos um modelo básico do _document)
 
 <h3 align="left">✅ files </h3>
+
+Esse componente trabalha com operações de manipulação de arquivos, incluindo `listagem`, `download` e `exclusão` em um ambiente de armazenamento Firebase. Nele há duas funções assíncronas e ao final, a interface renderizada é uma lista de arquivos, onde cada arquivo tem dois botões: um para baixar (`handleDownloadFile`) e outro para deletar (`handleDeleteFile`).
+
+- handleDownloadFile: É uma função que lida com o `download` de um arquivo. Ela usa a função `getFile` para obter o URL do arquivo e em seguida utiliza o `fetch` para baixá-lo.
+O arquivo é criado como um `Blob` (objeto binário) e um link é criado para ele no `DOM`. Por fim, o elemento é adicionado ao corpo do documento e é simulado um clique nele para iniciar o download.
+
+- handleDeleteFile: É uma função que lida com a `exclusão` de um arquivo. Usa a função `deleteFile` para remover o arquivo do armazenamento e atualiza o estado files para filtrar o arquivo excluído.
+
+
+
 <h3 align="left">✅ index </h3>
 O arquivo index.jsx é um arquivo TypeScript que geralmente é usado para representar a página inicial do projeto. O nome index.jsx é uma convenção comum para esse propósito.
 Para modificar o arquivo index.jsx de um projeto, você deve seguir estas etapas:
@@ -97,7 +108,32 @@ Para modificar o arquivo index.jsx de um projeto, você deve seguir estas etapas
 - Localize o arquivo index.jsx: `src/pages/index.tsx`
 - Edite o arquivo: Abra o arquivo pages.jsx no seu editor de código preferido. (Eu recomendo o Visual Studio Code) 
 - Teste a página: Abra o navegador com a url do local host.
+
+Nossa equipe utiliza este arquivo para exibir dados em tempo real de nosso barco `POENTE` e nele temos:
+
+- Estado com useState:
+
+  O nosso componente `Home` utiliza o `hook` useState do React para gerenciar o estado local:
+
+   - `dadoAtualBarco`: Armazena os dados atuais do barco.
+   - `dadosBarco`: Armazena uma lista de dados do barco.
+   - `dataForChart`: Armazena os dados formatados para serem exibidos em um gráfico.
+   - `dataForChat`: Armazena uma string formatada para ser usada em um chat.
+   - `speed`: Armazena a velocidade do barco.
+
+- Blocos UserEffect
+  Existem dois blocos de useEffect:
   
+   - O `primeiro` é usado para se `inscrever` a eventos do socket. Isso significa que quando os eventos `info`, `speedInfo` e `nameInfo` são emitidos pelo servidor de socket, as
+     funções fornecidas serão executadas.
+
+  - O `segundo` useEffect é usado para `atualizar` os dados que serão usados no gráfico e no chat. Ele depende do estado `dadosBarco`, o que significa que sempre que dadosBarco for
+    atualizado, este useEffect será executado.
+
+- Manipulação de eventos:
+  Existe um `dropdown` que permite ao usuário selecionar o nome do piloto. Isso altera o estado selectedOption e emite um evento para o servidor de socket e um botão para mudança de tema (dark/light).
+
+
 <h3 align="left">✅ users </h3>
 
 
