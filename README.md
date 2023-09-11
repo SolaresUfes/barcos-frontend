@@ -38,13 +38,6 @@ No Next.js, os "components" são blocos de código reutilizáveis que encapsulam
 Depois de criar um componente, você pode importá-lo e usá-lo em outras partes do seu do projeto. 
 <br /><br />
 
-
-Atualmente temos os seguintes componentes adicionado a tela:
-<div style="display: inline_block" align="center">
-<br /><br />
-<img  width="40%" src="https://github.com/ProjetoSolaresUfes/barcos-frontend/assets/80075307/06a26fa6-a5c8-4645-a2a9-2afbb684fb64">
-<br /><br />
-<div style="display: inline_block" align="left">
 Para adicionar novos componentes ao front end, é necessário trabalhar com as pastas que estão contidas dentro de `src/componentes`. 
 
 -   Crie um novo arquivo TypeScript na pasta  `src/componentes`.  -> Ex: `componenteX.tsx`.
@@ -52,9 +45,43 @@ Para adicionar novos componentes ao front end, é necessário trabalhar com as p
 -   No arquivo  `pages/index.tsx` deve importar o componente criado. -> Ex: `import { criaComponenteX } from "@/components/componenteX";`
 -   Deve utilizar o componte dentro da função `Home(){..}` do  `pages/index.tsx`.
 
+Atualmente temos os seguintes componentes adicionado a tela:
+<div style="display: inline_block" align="center">
+<br /><br />
+<img  width="40%" src="https://github.com/ProjetoSolaresUfes/barcos-frontend/assets/80075307/06a26fa6-a5c8-4645-a2a9-2afbb684fb64">
+<br /><br />
+<div style="display: inline_block" align="left">
+
+<h3 align="left">✅ CardDisplayData </h3>
+<h3 align="left">✅ Chart </h3>
+<h3 align="left">✅ Chat </h3>
+<h3 align="left">✅ Dropdown </h3>
+<h3 align="left">✅ Sidebar </h3>
+<h3 align="left">✅ ThemeToggle </h3>
+<h3 align="left">✅ UsersCard </h3>
 
 
-# 📂 Pages
+
+
+
+<h3 align="left">📂 Firebase </h3>
+
+
+<img  width="40%" src="
+<h3 align="left">✅ index </h3>
+
+<h3 align="left">📂 functions </h3>
+    <h3 align="left">✅ auth </h3>
+    <h3 align="left">✅ firestore </h3>
+    <h3 align="left">✅ storage </h3>
+
+<h3 align="left">✅ index </h3>
+
+<h3 align="left">📂 Mock </h3>
+
+   <h3 align="left">✅ dados </h3>
+
+<h3 align="left">📂 Pages </h3> 
 No Next.js não é preciso realizar nenhum tipo de configuração ou utilizar bibliotecas para fazer o tratamento de rotas, basta criar uma página dentro da pasta "pages" que irá ficar subentendido para a aplicação que os arquivos com extensão ".jsx" é uma rota acessível 
 Ao criar um arquivo dentro da pasta “pages”, o Next.js automaticamente irá assumir que o nome daquele arquivo é um endereço acessível da sua aplicação. Caso seja necessário criar algum arquivo ou alguma pasta dentro dessa pasta que não será vista como um endereço, basta acrescentar o “_” antes do nome do arquivo ou pasta.
 <br /><br />
@@ -111,9 +138,7 @@ Para modificar o arquivo index.jsx de um projeto, você deve seguir estas etapas
 
 Nossa equipe utiliza este arquivo para exibir dados em tempo real de nosso barco `POENTE` e nele temos:
 
-- Estado com useState:
-
-  O nosso componente `Home` utiliza o `hook` useState do React para gerenciar o estado local:
+- Estado com useState: O nosso componente `Home` utiliza o `hook` useState do React para gerenciar o estado local de:
 
    - `dadoAtualBarco`: Armazena os dados atuais do barco.
    - `dadosBarco`: Armazena uma lista de dados do barco.
@@ -121,44 +146,50 @@ Nossa equipe utiliza este arquivo para exibir dados em tempo real de nosso barco
    - `dataForChat`: Armazena uma string formatada para ser usada em um chat.
    - `speed`: Armazena a velocidade do barco.
 
-- Blocos UserEffect
-  Existem dois blocos de useEffect:
+- Blocos UserEffect (Existem dois):
   
-   - O `primeiro` é usado para se `inscrever` a eventos do socket. Isso significa que quando os eventos `info`, `speedInfo` e `nameInfo` são emitidos pelo servidor de socket, as
+  - O `primeiro` é usado para se `inscrever` a eventos do socket. Isso significa que quando os eventos `info`, `speedInfo` e `nameInfo` são emitidos pelo servidor de socket, as
      funções fornecidas serão executadas.
 
   - O `segundo` useEffect é usado para `atualizar` os dados que serão usados no gráfico e no chat. Ele depende do estado `dadosBarco`, o que significa que sempre que dadosBarco for
     atualizado, este useEffect será executado.
 
-- Manipulação de eventos:
-  Existe um `dropdown` que permite ao usuário selecionar o nome do piloto. Isso altera o estado selectedOption e emite um evento para o servidor de socket e um botão para mudança de tema (dark/light).
+- Manipulação de eventos: Existe um `dropdown` que permite ao usuário selecionar o nome do piloto. Isso altera o estado selectedOption e emite um evento para o servidor de socket e um botão para mudança de tema (dark/light).
 
 
 <h3 align="left">✅ users </h3>
 
+Este arquivo cria uma página que `exibe` informações de usuários, permite a `adição` de novos usuários através de um alerta e utiliza o Firebase para obter e `atualizar` os dados em tempo real.
 
-<h3 align="left">📂 Firebase </h3>
+- O componente Users: Define um estado chamado users para armazenar as informações dos usuários e utiliza o hook useEffect para buscar os dados dos usuários em tempo real do Firestore ao montar o componente e ao fim, renderiza um componente `UsersCard`, passando a lista de usuários e uma função para adicionar novos usuários.
+  
+
 
 ---
-<h3 align="left">📂 Mock </h3>
 
 ---
 <h3 align="left">📂 Routes </h3>
+   <h3 align="left">✅ index </h3>
 
 ---
 <h3 align="left">📂 Services </h3>
+   <h3 align="left">✅ socketio </h3>
 
 ---
 <h3 align="left">📂 Styles </h3>
+   <h3 align="left">✅ globals </h3>
 
 ---
 <h3 align="left">📂 Types </h3>
+   <h3 align="left">✅ ChartData </h3>
 
 ---
 <h3 align="left">📂 Utils </h3>
+   <h3 align="left">✅ ChartData </h3>
 
 ---
 <h3 align="left">📂 Tailwind e .jason </h3>
+   <h3 align="left">✅ ChartData </h3>
 
 links interessantes:
 
