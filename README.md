@@ -1,5 +1,5 @@
 
-## 📁 DOCUMENTAÇÃO
+## 🗃️ DOCUMENTAÇÃO
 <h3 align="left">✅ Entendendo o Next.js </h3>
 <br /><br />
 <div style="display: inline_block" align="center">
@@ -359,19 +359,20 @@ Nossa equipe utiliza este arquivo para exibir dados em tempo real de nosso barco
 Este arquivo cria uma página que `exibe` informações de usuários, permite a `adição` de novos usuários através de um alerta e utiliza o Firebase para obter e `atualizar` os dados em tempo real.
 
 - O componente Users: Define um estado chamado users para armazenar as informações dos usuários e utiliza o hook useEffect para buscar os dados dos usuários em tempo real do Firestore ao montar o componente e ao fim, renderiza um componente `UsersCard`, passando a lista de usuários e uma função para adicionar novos usuários.
-  
-
-
----
 
 ---
 <h3 align="left">📂 Routes </h3>
    <h3 align="left">✅ index </h3>
+   
+   Este arquivo exporta um `menu` de navegação que contém os seguintes atributos:
 
+   - name: O nome do item de menu.
+   - href: O destino para onde o item de menu leva.
+   - icon: Um componente de ícone React que será renderizado junto ao nome do item de menu.
 ---
 <h3 align="left">📂 Services </h3>
    <h3 align="left">✅ socketio </h3>
-
+   
 ---
 <h3 align="left">📂 Styles </h3>
    <h3 align="left">✅ globals </h3>
@@ -379,16 +380,69 @@ Este arquivo cria uma página que `exibe` informações de usuários, permite a 
 ---
 <h3 align="left">📂 Types </h3>
    <h3 align="left">✅ ChartData </h3>
+    Este arquivo contém a interface DadosBarco e ChartData que representa os dados do nosso barco no gráfico. 
+
+  - `DadosBarco`: variáveis do tipo string
+    - temperatura e umidade
+    - velocidadeBarco e updateAt
+    - estadoStringSolar1 e estadoStringSolar2
+    - correnteMotor, correnteBaterias, correnteMPPT
+    - tensaoSaidaMPPT, tensaoEntradaMPPT e tensaoAlimentacaoPCB]
+  
+ - `ChartData`: gropo de chave e valor.
 
 ---
 <h3 align="left">📂 Utils </h3>
-   <h3 align="left">✅ ChartData </h3>
+   <div style="display: inline_block" align="center">
+   <br /><br />
+   <img  width="40%" src="https://github.com/ProjetoSolaresUfes/barcos-frontend/assets/80075307/a013a0eb-192f-4a13-88d7-c08f7001c12c">
+   <br /><br />
+   <div style="display: inline_block" align="left">
 
----
-<h3 align="left">📂 Tailwind e .jason </h3>
-   <h3 align="left">✅ ChartData </h3>
+   <h3 align="left">✅ Char </h3>
+   
+   Neste arquivo, esta presente uma a função `transformDataChart` que pega um array com os dados originais do tipo  `DadosBarco` que, extrai informações específicas de cada objeto e as
+   reorganiza em um novo formato onde os pontos de dados são agrupados por tipo de dado e registrados com um carimbo de data/hora específico, que é mais adequado para ser usado em
+   gráficos.
+   
+   <h3 align="left">✅ Chat-convert </h3>
 
-links interessantes:
+   Neste arquivo, esta presente uma a função `formatDataChat` pega um array de objetos do tipo `DadosBarco` e os transforma em uma string formatada no estilo de um arquivo CSV, onde 
+   cada linha representa um objeto e cada coluna é uma propriedade do objeto.
+   
+   <h3 align="left">✅ Popups </h3>
+
+   Neste arquivo esta presente algumas funções que trabalham em conjunto para fornecer feedback ao usuário, são elas:
+
+   - ToastSuccess(message: string, status: any):
+
+Esta função exibe uma notificação de sucesso usando o sweetalert2.
+message: É uma string que contém a mensagem que será exibida na notificação.
+status: Pode ser um valor que indica o status da notificação (por exemplo, "success" para uma notificação de sucesso).
+A notificação é configurada para aparecer no canto superior direito da tela, é exibida por 2 segundos (timer: 2000) e mostra uma barra de progresso que diminui enquanto a notificação é exibida.
+
+AlertAddEmail(saveEmail: any):
+
+Esta função exibe um alerta para inserção de um endereço de e-mail.
+saveEmail: É uma função que parece ser responsável por salvar o e-mail (possivelmente em algum tipo de armazenamento de dados).
+A função Swal.fire cria uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email.
+
+Em seguida, verifica-se se um e-mail foi inserido. Se sim, a função saveEmail é chamada para salvar o e-mail. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando a função ToastSuccess.
+
+
+
+AlertAddEmail(saveEmail: any):
+
+Esta função exibe um alerta para inserção de um endereço de e-mail.
+saveEmail: É uma função que parece ser responsável por salvar o e-mail (possivelmente em algum tipo de armazenamento de dados).
+A função Swal.fire cria uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email.
+
+Em seguida, verifica-se se um e-mail foi inserido. Se sim, a função saveEmail é chamada para salvar o e-mail. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando a função ToastSuccess.
+
+   <h3 align="left">✅ Screen </h3>
+
+
+🔗 links interessantes:
 
 https://community.revelo.com.br/guia-basico-para-iniciar-com-next-js-parte-i/
 
