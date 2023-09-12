@@ -25,26 +25,29 @@ yarn dev
 # ou
 pnpm dev
 ```
-
-Abra -> [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
-
-Você pode começar a editar a página modificando `pages/index.tsx` que se localiza dentro de `src/`. A página é atualizada automaticamente conforme você edita o arquivo e sera mostrada no localhost.
+<p align="justify">
+   Abra -> [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
+   
+   Você pode começar a editar a página modificando `pages/index.tsx` que se localiza dentro de `src/`. A página é atualizada automaticamente conforme você edita o arquivo e sera mostrada no localhost.
+</p>
 <br /><br />
 
 
 # 📂 Components
   <h3 align="left">✅ Adicionando um novo componente na tela </h3>
-  No Next.js, os "components" são blocos de código reutilizáveis que encapsulam parte da lógica e da interface do usuário de uma página ou aplicativo.
-  Depois de criar um componente, você pode importá-lo e usá-lo em outras partes do seu do projeto. 
-  <br /><br />
-  
-  Para adicionar novos componentes ao front end, é necessário trabalhar com as pastas que estão contidas dentro de `src/componentes`. 
-  
-  -   Crie um novo arquivo TypeScript na pasta  `src/componentes`.  -> Ex: `componenteX.tsx`.
-  -   É necessário exportar a função que gera o componente (no mesmo arquivo).  -> Ex: `export default function criaComponenteX{... lógica do componente...}`
-  -   No arquivo  `pages/index.tsx` deve importar o componente criado. -> Ex: `import { criaComponenteX } from "@/components/componenteX";`
-  -   Deve utilizar o componte dentro da função `Home(){..}` do  `pages/index.tsx`.
-  
+  <p align="justify">
+   No Next.js, os "components" são blocos de código reutilizáveis que encapsulam parte da lógica e da interface do usuário de uma página ou aplicativo.
+   Depois de criar um componente, você pode importá-lo e usá-lo em outras partes do seu do projeto. 
+   <br /><br />
+   
+   Para adicionar novos componentes ao front end, é necessário trabalhar com as pastas que estão contidas dentro de `src/componentes`. 
+   
+   -   Crie um novo arquivo TypeScript na pasta  `src/componentes`.  -> Ex: `componenteX.tsx`.
+   -   É necessário exportar a função que gera o componente (no mesmo arquivo).  -> Ex: `export default function criaComponenteX{... lógica do componente...}`
+   -   No arquivo  `pages/index.tsx` deve importar o componente criado. -> Ex: `import { criaComponenteX } from "@/components/componenteX";`
+   -   Deve utilizar o componte dentro da função `Home(){..}` do  `pages/index.tsx`.
+ </p>
+
   Atualmente temos os seguintes componentes adicionado a tela:
   <div style="display: inline_block" align="center">
   <br /><br />
@@ -53,43 +56,48 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
   <div style="display: inline_block" align="left">
 
   <h3 align="left">✅ CardDisplayData </h3>
+  <p align="justify">
 
-  Este é um componente funcional React chamado CardDisplayData, ele contém: 
-  
-  - `Interface CardDisplayDataProps`: Define um tipo de interface para as propriedades que queremos do nosso braco. Essa interface especifica quais propriedades podem ser passadas para o componente, bem como seus tipos.
-  - `Função CardDisplayData`: Renderiza uma representação visual dos dados do barco com cada propriedade contendo um rótulo de unidade de medida associado a ela. As propriedades são inicializadas com valores padrão, caso não sejam fornecidas quando o componente é 
-  usado.
-  
+   Este é um componente funcional React chamado CardDisplayData, ele contém: 
+   
+   - `Interface CardDisplayDataProps`: Define um tipo de interface para as propriedades que queremos do nosso braco. Essa interface especifica quais propriedades podem ser passadas para o componente, bem como seus tipos.
+   - `Função CardDisplayData`: Renderiza uma representação visual dos dados do barco com cada propriedade contendo um rótulo de unidade de medida associado a ela. As propriedades são inicializadas com valores padrão, caso não sejam fornecidas quando o componente é usado.
+  </p>
+
   <h3 align="left">✅ Chart </h3>
-  
-  Este é um componente funcional React chamado Chart, ele contém a definição de um gráfico de linha usando a biblioteca `Carbon Charts` e o renderiza com base nos dados fornecidos através das props data. O gráfico é configurado usando o objeto options e é estilizado 
-  com classes CSS.
+  <p align="justify">
+
+   Este é um componente funcional React chamado Chart, ele contém a definição de um gráfico de linha usando a biblioteca `Carbon Charts` e o renderiza com base nos dados fornecidos através das props data. O gráfico é configurado usando o objeto options e é estilizado com classes CSS.
+ </p>
 
   <h3 align="left">✅ Chat </h3>
-  
-  Este é um componente funcional React chamado Chat, ele renderiza uma interface de chat interativo (chat-bot) permitindo que o usuário envie perguntas para um servidor, que processa a pergunta e envia uma resposta de volta. A interface do chat inclui mensagens de 
-  perguntas e respostas, um campo de entrada de texto para as perguntas e um botão de envio. Também há um botão de abertura/fechamento do chat quando ele está minimizado. Neste momento essa funcionalidade do componente esta em teste e o nosso objetivo com ele está 
-  relacionado a ajudar a equipe de telemetria nas provas do DSB, onde ele irá fornecer informações confiáveis a respeito do estado do barco e com isso, a nossa equipe irá tomar decisões melhores em relação ao estado do barco e do tipo de prova visando o melhor 
-  desempenho possível.
+  <p align="justify">
+    Este é um componente funcional React chamado Chat, ele renderiza uma interface de chat interativo (chat-bot) permitindo que o usuário envie perguntas para um servidor, que processa a pergunta e envia uma resposta de volta. A interface do chat inclui mensagens de perguntas e respostas, um campo de entrada de texto para as perguntas e um botão de envio. Também há um botão de abertura/fechamento do chat quando ele está minimizado. Neste momento essa funcionalidade do componente esta em teste e o nosso objetivo com ele está relacionado a ajudar a equipe de telemetria nas provas do DSB, onde ele irá fornecer informações confiáveis a respeito do estado do barco e com isso, a nossa equipe irá tomar decisões melhores em relação ao estado do barco e do tipo de prova visando o melhor desempenho possível.
+  </p>
   
   <h3 align="left">✅ Dropdown </h3>
-  
-  Este é um componente funcional React chamado Dropdown, ele cria uma lista suspensa que permite ao usuário selecionar um piloto. Quando uma seleção é feita, a função onChange (fornecida como prop) é chamada com o novo valor selecionado e ao final, teremos os dados 
-  (do barco) referente a um específico piloto para futuras análises de dados.
+  <p align="justify">
+
+  Este é um componente funcional React chamado Dropdown, ele cria uma lista suspensa que permite ao usuário selecionar um piloto. Quando uma seleção é feita, a função onChange (fornecida como prop) é chamada com o novo valor selecionado e ao final, teremos os dados (do barco) referente a um específico piloto para futuras análises de dados.
+  </p>
   
   <h3 align="left">✅ Sidebar </h3>
-  
-  Este é um componente funcional React chamado Dropdown, ele representa uma barra lateral de navegação presente na tela do frontend que pode ser aberta/fechada com um clique em um ícone de menu. Ela inclui opções de navegação, um botão para iniciar/parar a gravação e 
-  um botão para deslogar da página.
+  <p align="justify">
+
+  Este é um componente funcional React chamado Dropdown, ele representa uma barra lateral de navegação presente na tela do frontend que pode ser aberta/fechada com um clique em um ícone de menu. Ela inclui opções de navegação, um botão para iniciar/parar a gravação e um botão para deslogar da página.
+    </p>
   
   <h3 align="left">✅ ThemeToggle </h3>
-  
-  Este é um componente funcional React chamado Dropdown, ele cria um botão que permite ao usuário alternar entre os modos claro e escuro do tema no canto superior direito da página. Ele verifica se o componente está montado antes de renderizar para evitar possíveis  
-  problemas durante a inicialização. Quando o botão é clicado, ele chama a função para trocar o tema, e exibe o ícone correspondente ao tema atual.
-  
+  <p align="justify">
+
+  Este é um componente funcional React chamado Dropdown, ele cria um botão que permite ao usuário alternar entre os modos claro e escuro do tema no canto superior direito da página. Ele verifica se o componente está montado antes de renderizar para evitar possíveis problemas durante a inicialização. Quando o botão é clicado, ele chama a função para trocar o tema, e exibe o ícone correspondente ao tema atual.
+    </p>
+    
   <h3 align="left">✅ UsersCard </h3>
-  
+    <p align="justify">
+
    Este é um componente funcional React chamado UsersCard, ele representa uma janela de exibição, adição e remoção de usuários autorizados onde cada um deles é representado com seu email e um ícone de lixeira para remoção.
+    </p>
 
 
 --- 
@@ -102,46 +110,46 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
  
   <h3 align="left">📂 functions </h3>
     <h3 align="left">✅ auth </h3>
-      
+    <p align="justify">
+  
    Este arquivo fornece funcionalidades relacionadas à autenticação de usuários usando `Firebase Authentication`, incluindo o login com uma conta do Google, o registro de novos usuários e a desconexão de usuários autenticados. Nele há três funcões principais: 
 
    - `signInWithPopup`: Permite que o usuário faça login usando um provedor de autenticação (neste caso, o provedor Google). Quando o login é bem-sucedido, verifica se o usuário está autorizado verificando se o e-mail está presente na lista de usuários autorizados.
    - `GoogleAuthProvider`: Cria uma instância do provedor de autenticação do Google.
    - `createUserWithEmailAndPassword`: Cria um novo usuário com um endereço de e-mail e uma senha.
+</p>
 
    <h3 align="left">✅ firestore </h3>
-     
+   <p align="justify">
+
   Este aquivo contém um conjunto de cinco funções que permitem interagir com o Firestore de forma assíncrona, facilitando a leitura, escrita, atualização e remoção de dados na sua aplicação. São elas: 
 
-  - `getAllInfoCollection`: Esta função busca todos os documentos de uma coleção específica no Firestore. Ela recebe o nome da coleção como argumento (collectionName) onde cada objeto possui os dados do documento e um campo adicional chamado ID, que representa o 
-     identificador único do documento.
-  - `getAllInfoCollectionRealTime`: Esta função ativa um ouvinte em tempo real para a coleção especificada no Firestore. Ela também recebe o nome da coleção (collectionName) e uma função setData que será chamada quando os dados mudarem. A função setData recebe um   
-     array de objetos, onde cada objeto representa um documento com um campo ID.
+  - `getAllInfoCollection`: Esta função busca todos os documentos de uma coleção específica no Firestore. Ela recebe o nome da coleção como argumento (collectionName) onde cada objeto possui os dados do documento e um campo adicional chamado ID, que representa o identificador único do documento.
+  - `getAllInfoCollectionRealTime`: Esta função ativa um ouvinte em tempo real para a coleção especificada no Firestore. Ela também recebe o nome da coleção (collectionName) e uma função setData que será chamada quando os dados mudarem. A função setData recebe um  array de objetos, onde cada objeto representa um documento com um campo ID.
   - `saveInfoCollection`: Esta função `adiciona` um novo documento à coleção especificada. Ela recebe o nome da coleção (collectionName) e os dados que serão salvos no novo documento (data).
   - `updateInfoCollection`: Esta função `atualiza` um documento existente na coleção especificada. Ela recebe o nome da coleção (collectionName), o ID do documento que será atualizado (ID) e os novos dados que serão salvos (data). 
   - `removeInfoCollection`: Esta função `remove` um documento da coleção especificada. Ela recebe o nome da coleção (collectionName) e o ID do documento que será removido (ID).
+</p>
 
-
-
-
-  
    <h3 align="left">✅ storage </h3>
+   <p align="justify">
 
    Este aquivo contém um conjunto de cinco funções que fornecem uma interface para manipular arquivos no Firebase Storage, permitindo uploads, downloads, listagem e exclusões de arquivos. São elas: 
   
-  - `uploadFile`: Esta função é responsável por fazer o upload de um arquivo para o Firebase Storage. Ela recebe um objeto UploadFileProps como argumento, contendo informações sobre o arquivo a ser enviado. Isso inclui o título do arquivo (title), o próprio arquivo 
-    (file), um callback opcional para informar o progresso do upload (progressPercentage), um callback opcional para lidar com o sucesso do upload (load), um callback opcional para lidar com erros (errorInfo), e um caminho opcional para onde o arquivo será armazenado 
+  - `uploadFile`: Esta função é responsável por fazer o upload de um arquivo para o Firebase Storage. Ela recebe um objeto UploadFileProps como argumento, contendo informações sobre o arquivo a ser enviado. Isso inclui o título do arquivo (title), o próprio arquivo (file), um callback opcional para informar o progresso do upload (progressPercentage), um callback opcional para lidar com o sucesso do upload (load), um callback opcional para lidar com erros (errorInfo), e um caminho opcional para onde o arquivo será armazenado 
     (path).
   - `getFile`: Esta função permite obter a URL de download de um arquivo armazenado no Firebase Storage com base em seu ID. Ela recebe o ID do arquivo (ID) e um caminho opcional (path) que especifica onde o arquivo está armazenado.
   - `listFiles`: Esta função lista todos os arquivos em um determinado caminho no Firebase Storage e retorna uma array com os nomes dos arquivos.
   - `deleteFile`: Esta função permite excluir um arquivo do Firebase Storage com base em seu ID. Ela recebe o ID do arquivo (ID) e um caminho opcional (path) que especifica onde o arquivo está armazenado.
+</p>
       
    <h3 align="left">✅ index </h3>
+   <p align="justify">
+
    Este arquivo é responsável por configurar e inicializar o Firebase em nosso projeto, nele temos:
 
    - `Importações` do Firebase: Aqui se encontra toda importação necessária para inicializar e utilizar os serviços de autenticação, banco de dados Firestore e armazenamento.
-   - `firebaseConfig`: Aqui está a configuração do Firebase que contém informações específicas do nosso projeto, como apiKey, authDomain, projectId, storageBucket, messagingSenderId e appId. Essas informações são lidas de variáveis de ambiente usando o process.env 
-   para manter as credenciais seguras.
+   - `firebaseConfig`: Aqui está a configuração do Firebase que contém informações específicas do nosso projeto, como apiKey, authDomain, projectId, storageBucket, messagingSenderId e appId. Essas informações são lidas de variáveis de ambiente usando o process.env para manter as credenciais seguras.
    - Inicialização Firebase e dos Serviços: Aqui temos:
      - `getFirestore`: Inicializa o Firestore, o banco de dados em tempo real do Firebase, e retorna uma instância do   
         Firestore associada à aplicação Firebase app.
@@ -149,12 +157,16 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
         aplicação Firebase app.
      - `getStorage`: Inicializa o serviço de armazenamento do Firebase e retorna uma instância de armazenamento associada à 
         aplicação Firebase app.
- 
+ </p>
+
 
 --- 
 <h3 align="left">📂 Mock </h3>
    <h3 align="left">✅ dados </h3>
-     Este arquivo exporta um array de dados com vários objetos de propriedades do barco, cada um representando uma leitura de dados em um momento específico para testes.
+   <p align="justify">
+
+   Este arquivo exporta um array de dados com vários objetos de propriedades do barco, cada um representando uma leitura de dados em um momento específico para testes.
+</p>
 
      
 --- 
@@ -169,6 +181,8 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
    <div style="display: inline_block" align="left">
 
    <h3 align="left">✅ _app </h3>
+   <p align="justify">
+
    No Next.js, o arquivo _app.tsx é usado para fornecer uma estrutura global para sua aplicação. Ele é responsável por fornecer componentes compartilhados, como cabeçalho e rodapé, em todas as páginas da sua aplicação.
       
    Em nosso projeto, declaramos três estados iniciais utilizando Hook useState:
@@ -180,33 +194,38 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
    
     
    `UserEfect`: 
-   - É configurado um observador (onAuthStateChanged) para verificar o estado da autenticação do usuário. Quando o estado de autenticação do usuário muda, uma função é executada para verificar se o usuário está autorizado com base em informações obtidas de uma coleção 
-   chamada "users" no Firebase Firestore.
+   - É configurado um observador (onAuthStateChanged) para verificar o estado da autenticação do usuário. Quando o estado de autenticação do usuário muda, uma função é executada para verificar se o usuário está autorizado com base em informações obtidas de uma coleção chamada "users" no Firebase Firestore.
    -  Há um evento de escuta de socket chamado "recordStatus" que atualiza o estado recordStatus quando o status de gravação muda.
    
    `Renderização condicional`:
-   -  Caso o usuário não esteja autenticado (!isAuthenticated), o código renderiza um botão "Entrar com o Google" que permite ao usuário fazer login com sua conta do Google. Se ocorrer um erro de autenticação (erroAutenticacao for verdadeiro), uma mensagem de erro é 
-   exibida.
+   -  Caso o usuário não esteja autenticado (!isAuthenticated), o código renderiza um botão "Entrar com o Google" que permite ao usuário fazer login com sua conta do Google. Se ocorrer um erro de autenticação (erroAutenticacao for verdadeiro), uma mensagem de erro é exibida.
    -  Caso o usuário esteja autenticado (isAuthenticated), o código renderiza um componente Sidebar e o conteúdo da página principal, que é controlado pela prop Component. Isso inclui a capacidade de iniciar ou parar uma gravação, dependendo do valor de recordStatus.
+</p>
 
    <h3 align="left">✅ _document </h3>
-    O arquivo _document.tsx é usado para controlar o HTML que será renderizado no lado do servidor. É neste arquivo que você pode adicionar meta tags, scripts, estilos e outros elementos que serão compartilhados por todas as páginas da sua aplicação.
+   <p align="justify">
+    
+   O arquivo _document.tsx é usado para controlar o HTML que será renderizado no lado do servidor. É neste arquivo que você pode adicionar meta tags, scripts, estilos e outros elementos que serão compartilhados por todas as páginas da sua aplicação.
     O componente Head é usado para definir as configurações do cabeçalho HTML, como links para folhas de estilo, links para ícones e meta informações. O componente Html define a estrutura básica do HTML, incluindo a linguagem da página.
       
    (Em nosso projeto utilizamos um modelo básico do _document)
-      
-   <h3 align="left">✅ files </h3>
+  </p>
    
-   Esse componente trabalha com operações de manipulação de arquivos, incluindo `listagem`, `download` e `exclusão` em um ambiente de armazenamento Firebase. Nele há duas funções assíncronas e ao final, a interface renderizada é uma lista de arquivos, onde cada 
-   arquivo tem dois botões: um para baixar (`handleDownloadFile`) e outro para deletar (`handleDeleteFile`).
+   <h3 align="left">✅ files </h3>
+   <p align="justify">
+
+   Esse componente trabalha com operações de manipulação de arquivos, incluindo `listagem`, `download` e `exclusão` em um ambiente de armazenamento Firebase. Nele há duas funções assíncronas e ao final, a interface renderizada é uma lista de arquivos, onde cada arquivo tem dois botões: um para baixar (`handleDownloadFile`) e outro para deletar (`handleDeleteFile`).
    
    - handleDownloadFile: É uma função que lida com o `download` de um arquivo. Ela usa a função `getFile` para obter o URL do arquivo e em seguida utiliza o `fetch` para baixá-lo.
    O arquivo é criado como um `Blob` (objeto binário) e um link é criado para ele no `DOM`. Por fim, o elemento é adicionado ao corpo do documento e é simulado um clique nele para iniciar o download.
    
    - handleDeleteFile: É uma função que lida com a `exclusão` de um arquivo. Usa a função `deleteFile` para remover o arquivo do armazenamento e atualiza o estado files para filtrar o arquivo excluído.
-   
+   </p>
+
      
    <h3 align="left">✅ index </h3>
+   <p align="justify">
+
    O arquivo index.jsx é um arquivo TypeScript que geralmente é usado para representar a página inicial do projeto. O nome index.jsx é uma convenção comum para esse propósito.
    Para modificar o arquivo index.jsx de um projeto, você deve seguir estas etapas:
    
@@ -233,19 +252,22 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
        atualizado, este useEffect será executado.
    
    - Manipulação de eventos: Existe um `dropdown` que permite ao usuário selecionar o nome do piloto. Isso altera o estado selectedOption e emite um evento para o servidor de socket e um botão para mudança de tema (dark/light).
-   
+   </p>
+
    
    <h3 align="left">✅ users </h3>
-   
+   <p align="justify">
+
    Este arquivo cria uma página que `exibe` informações de usuários, permite a `adição` de novos usuários através de um alerta e utiliza o Firebase para obter e `atualizar` os dados em tempo real.
    
-   - O componente Users: Define um estado chamado users para armazenar as informações dos usuários e utiliza o hook useEffect para buscar os dados dos usuários em tempo real do Firestore ao montar o componente e ao fim, renderiza um componente `UsersCard`, passando a 
-   lista de usuários e uma função para adicionar novos usuários.
+   - O componente Users: Define um estado chamado users para armazenar as informações dos usuários e utiliza o hook useEffect para buscar os dados dos usuários em tempo real do Firestore ao montar o componente e ao fim, renderiza um componente `UsersCard`, passando a lista de usuários e uma função para adicionar novos usuários.
+</p>
      
 
 ---
 <h3 align="left">📂 Routes </h3>
-   <h3 align="left">✅ index </h3>
+   <h3 align="left">✅ index </h3>   
+   <p align="justify">
    
    Este arquivo exporta um `menu` de navegação que contém os seguintes atributos:
 
@@ -253,23 +275,33 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
    - href: O destino para onde o item de menu leva.
    - icon: Um componente de ícone React que será renderizado junto ao nome do item de menu.
 
-   - 
+</p>
+
+
 ---
 <h3 align="left">📂 Services </h3>
-   <h3 align="left">✅ socketio </h3>
+   <h3 align="left">✅ socketio </h3>  
+   <p align="justify">
+    
    Esse código estabelece uma conexão entre o cliente e o servidor Socket.IO em tempo real hospedado em https://barcos-backend.onrender.com.
+</p>
 
    
 ---
 <h3 align="left">📂 Styles </h3>
-   <h3 align="left">✅ globals </h3>
+   <h3 align="left">✅ globals </h3>   
+   <p align="justify">
+    
 Aqui se encontra os estilos que são aplicados em toda a aplicação, afetando todos os componentes e páginas. 
+</p>
 
 
 ---
 <h3 align="left">📂 Types </h3>
-   <h3 align="left">✅ ChartData </h3>
-    Este arquivo contém a interface DadosBarco e ChartData que representa os dados do nosso barco no gráfico. 
+   <h3 align="left">✅ chartData </h3>
+   <p align="justify">
+    
+   Este arquivo contém a interface DadosBarco e ChartData que representa os dados do nosso barco no gráfico. 
 
   - `DadosBarco`: variáveis do tipo string
     - temperatura e umidade
@@ -279,6 +311,7 @@ Aqui se encontra os estilos que são aplicados em toda a aplicação, afetando t
     - tensaoSaidaMPPT, tensaoEntradaMPPT e tensaoAlimentacaoPCB]
   
  - `ChartData`: grupo de chave e valor.
+</p>
 
 
 ---
@@ -289,29 +322,37 @@ Aqui se encontra os estilos que são aplicados em toda a aplicação, afetando t
    <br /><br />
    <div style="display: inline_block" align="left">
 
-   <h3 align="left">✅ Char </h3>
+   <h3 align="left">✅ char </h3>   
+   <p align="justify">
    
    Neste arquivo, esta presente uma a função `transformDataChart` que pega um array com os dados originais do tipo  `DadosBarco` que, extrai informações específicas de cada objeto e as
    reorganiza em um novo formato onde os pontos de dados são agrupados por tipo de dado e registrados com um carimbo de data/hora específico, que é mais adequado para ser usado em
    gráficos.
-   
-   <h3 align="left">✅ Chat-convert </h3>
+   </p>
+
+   <h3 align="left">✅ chat-convert </h3>   
+   <p align="justify">
 
    Neste arquivo, esta presente uma a função `formatDataChat` pega um array de objetos do tipo `DadosBarco` e os transforma em uma string formatada no estilo de um arquivo CSV, onde 
    cada linha representa um objeto e cada coluna é uma propriedade do objeto.
-   
-   <h3 align="left">✅ Popups </h3>
+   </p>
+
+   <h3 align="left">✅ popups </h3>   
+   <p align="justify">
 
    Neste arquivo esta presente algumas funções que trabalham em conjunto para fornecer feedback ao usuário, são elas:
 
    - `ToastSuccess`: Esta função utiliza o `sweetalert2` para exibir uma notificação de sucesso no canto superior direito da tela por um curto período de tempo. A notificação inclui um ícone que indica o status (como "sucesso" ou "erro") e uma mensagem
 
-   - `AlertAddEmail`: Utiliza o `Swal.fire` para exibir uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando 
-   a função ToastSucces
+   - `AlertAddEmail`: Utiliza o `Swal.fire` para exibir uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando a função ToastSucces
+</p>
 
-   <h3 align="left">✅ Screen </h3>
+   <h3 align="left">✅ screen </h3>   
+   <p align="justify">
    
    Esse arquivo é responsável pelo controle do dimensionamento da janela a ser exibida, contém  uma função chamada `useWindowSize` que permite obter o tamanho atual da janela do navegador, e se atualizará automaticamente quando o usuário redimensionar a janela.
+</p>
+
 
 🔗 links interessantes:
 
