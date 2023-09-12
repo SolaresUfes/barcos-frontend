@@ -101,9 +101,40 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
   <div style="display: inline_block" align="left">
  
   <h3 align="left">📂 functions </h3>
-      <h3 align="left">✅ auth </h3>
-      <h3 align="left">✅ firestore </h3>
-      <h3 align="left">✅ storage </h3>
+    <h3 align="left">✅ auth </h3>
+      
+   Este arquivo fornece funcionalidades relacionadas à autenticação de usuários usando `Firebase Authentication`, incluindo o login com uma conta do Google, o registro de novos usuários e a desconexão de usuários autenticados. Nele há três funcões principais: 
+
+   - `signInWithPopup`: Permite que o usuário faça login usando um provedor de autenticação (neste caso, o provedor Google). Quando o login é bem-sucedido, verifica se o usuário está autorizado verificando se o e-mail está presente na lista de usuários autorizados.
+   - `GoogleAuthProvider`: Cria uma instância do provedor de autenticação do Google.
+   - `createUserWithEmailAndPassword`: Cria um novo usuário com um endereço de e-mail e uma senha.
+
+   <h3 align="left">✅ firestore </h3>
+     
+  Este aquivo contém um conjunto de cinco funções que permitem interagir com o Firestore de forma assíncrona, facilitando a leitura, escrita, atualização e remoção de dados na sua aplicação. São elas: 
+
+  - `getAllInfoCollection`: Esta função busca todos os documentos de uma coleção específica no Firestore. Ela recebe o nome da coleção como argumento (collectionName) onde cada objeto possui os dados do documento e um campo adicional chamado ID, que representa o 
+     identificador único do documento.
+  - `getAllInfoCollectionRealTime`: Esta função ativa um ouvinte em tempo real para a coleção especificada no Firestore. Ela também recebe o nome da coleção (collectionName) e uma função setData que será chamada quando os dados mudarem. A função setData recebe um   
+     array de objetos, onde cada objeto representa um documento com um campo ID.
+  - `saveInfoCollection`: Esta função `adiciona` um novo documento à coleção especificada. Ela recebe o nome da coleção (collectionName) e os dados que serão salvos no novo documento (data).
+  - `updateInfoCollection`: Esta função `atualiza` um documento existente na coleção especificada. Ela recebe o nome da coleção (collectionName), o ID do documento que será atualizado (ID) e os novos dados que serão salvos (data). 
+  - `removeInfoCollection`: Esta função `remove` um documento da coleção especificada. Ela recebe o nome da coleção (collectionName) e o ID do documento que será removido (ID).
+
+
+
+
+  
+   <h3 align="left">✅ storage </h3>
+
+   Este aquivo contém um conjunto de cinco funções que fornecem uma interface para manipular arquivos no Firebase Storage, permitindo uploads, downloads, listagem e exclusões de arquivos. São elas: 
+  
+  - `uploadFile`: Esta função é responsável por fazer o upload de um arquivo para o Firebase Storage. Ela recebe um objeto UploadFileProps como argumento, contendo informações sobre o arquivo a ser enviado. Isso inclui o título do arquivo (title), o próprio arquivo 
+    (file), um callback opcional para informar o progresso do upload (progressPercentage), um callback opcional para lidar com o sucesso do upload (load), um callback opcional para lidar com erros (errorInfo), e um caminho opcional para onde o arquivo será armazenado 
+    (path).
+  - `getFile`: Esta função permite obter a URL de download de um arquivo armazenado no Firebase Storage com base em seu ID. Ela recebe o ID do arquivo (ID) e um caminho opcional (path) que especifica onde o arquivo está armazenado.
+  - `listFiles`: Esta função lista todos os arquivos em um determinado caminho no Firebase Storage e retorna uma array com os nomes dos arquivos.
+  - `deleteFile`: Esta função permite excluir um arquivo do Firebase Storage com base em seu ID. Ela recebe o ID do arquivo (ID) e um caminho opcional (path) que especifica onde o arquivo está armazenado.
       
    <h3 align="left">✅ index </h3>
    Este arquivo é responsável por configurar e inicializar o Firebase em nosso projeto, nele temos:
@@ -123,8 +154,9 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
 --- 
 <h3 align="left">📂 Mock </h3>
    <h3 align="left">✅ dados </h3>
+     Este arquivo exporta um array de dados com vários objetos de propriedades do barco, cada um representando uma leitura de dados em um momento específico para testes.
 
-
+     
 --- 
 <h3 align="left">📂 Pages </h3> 
    No Next.js não é preciso realizar nenhum tipo de configuração ou utilizar bibliotecas para fazer o tratamento de rotas, basta criar uma página dentro da pasta "pages" que irá ficar subentendido para a aplicação que os arquivos com extensão ".jsx" é uma rota 
@@ -220,13 +252,19 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
    - name: O nome do item de menu.
    - href: O destino para onde o item de menu leva.
    - icon: Um componente de ícone React que será renderizado junto ao nome do item de menu.
+
+   - 
 ---
 <h3 align="left">📂 Services </h3>
    <h3 align="left">✅ socketio </h3>
+   Esse código estabelece uma conexão entre o cliente e o servidor Socket.IO em tempo real hospedado em https://barcos-backend.onrender.com.
+
    
 ---
 <h3 align="left">📂 Styles </h3>
    <h3 align="left">✅ globals </h3>
+Aqui se encontra os estilos que são aplicados em toda a aplicação, afetando todos os componentes e páginas. 
+
 
 ---
 <h3 align="left">📂 Types </h3>
@@ -240,7 +278,8 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
     - correnteMotor, correnteBaterias, correnteMPPT
     - tensaoSaidaMPPT, tensaoEntradaMPPT e tensaoAlimentacaoPCB]
   
- - `ChartData`: gropo de chave e valor.
+ - `ChartData`: grupo de chave e valor.
+
 
 ---
 <h3 align="left">📂 Utils </h3>
