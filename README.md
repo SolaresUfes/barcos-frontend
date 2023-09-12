@@ -53,6 +53,13 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
   <div style="display: inline_block" align="left">
 
   <h3 align="left">✅ CardDisplayData </h3>
+
+  Este é um componente funcional React chamado CardDisplayData, ele contém: 
+  
+  - `Interface CardDisplayDataProps`: Define um tipo de interface para as propriedades que queremos do nosso braco. Essa interface especifica quais propriedades podem ser passadas para o componente, bem como seus tipos.
+  - `Função CardDisplayData`: Renderiza uma representação visual dos dados do barco com cada propriedade contendo um rótulo de unidade de medida. As propriedades são inicializadas com valores padrão, caso não sejam fornecidas quando o componente é usado.
+
+  
   <h3 align="left">✅ Chart </h3>
   <h3 align="left">✅ Chat </h3>
   <h3 align="left">✅ Dropdown </h3>
@@ -127,10 +134,10 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
    -  Caso o usuário esteja autenticado (isAuthenticated), o código renderiza um componente Sidebar e o conteúdo da página principal, que é controlado pela prop Component. Isso inclui a capacidade de iniciar ou parar uma gravação, dependendo do valor de recordStatus.
 
    <h3 align="left">✅ _document </h3>
-      O arquivo _document.tsx é usado para controlar o HTML que será renderizado no lado do servidor. É neste arquivo que você pode adicionar meta tags, scripts, estilos e outros elementos que serão compartilhados por todas as páginas da sua aplicação.
-      O componente Head é usado para definir as configurações do cabeçalho HTML, como links para folhas de estilo, links para ícones e meta informações. O componente Html define a estrutura básica do HTML, incluindo a linguagem da página.
+    O arquivo _document.tsx é usado para controlar o HTML que será renderizado no lado do servidor. É neste arquivo que você pode adicionar meta tags, scripts, estilos e outros elementos que serão compartilhados por todas as páginas da sua aplicação.
+    O componente Head é usado para definir as configurações do cabeçalho HTML, como links para folhas de estilo, links para ícones e meta informações. O componente Html define a estrutura básica do HTML, incluindo a linguagem da página.
       
-      (Em nosso projeto utilizamos um modelo básico do _document)
+   (Em nosso projeto utilizamos um modelo básico do _document)
       
    <h3 align="left">✅ files </h3>
    
