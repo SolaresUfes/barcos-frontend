@@ -234,33 +234,14 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
 
    Neste arquivo esta presente algumas funções que trabalham em conjunto para fornecer feedback ao usuário, são elas:
 
-   - ToastSuccess(message: string, status: any):
+   - `ToastSuccess`: Esta função utiliza o `sweetalert2` para exibir uma notificação de sucesso no canto superior direito da tela por um curto período de tempo. A notificação inclui um ícone que indica o status (como "sucesso" ou "erro") e uma mensagem
 
-Esta função exibe uma notificação de sucesso usando o sweetalert2.
-message: É uma string que contém a mensagem que será exibida na notificação.
-status: Pode ser um valor que indica o status da notificação (por exemplo, "success" para uma notificação de sucesso).
-A notificação é configurada para aparecer no canto superior direito da tela, é exibida por 2 segundos (timer: 2000) e mostra uma barra de progresso que diminui enquanto a notificação é exibida.
-
-AlertAddEmail(saveEmail: any):
-
-Esta função exibe um alerta para inserção de um endereço de e-mail.
-saveEmail: É uma função que parece ser responsável por salvar o e-mail (possivelmente em algum tipo de armazenamento de dados).
-A função Swal.fire cria uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email.
-
-Em seguida, verifica-se se um e-mail foi inserido. Se sim, a função saveEmail é chamada para salvar o e-mail. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando a função ToastSuccess.
-
-
-
-AlertAddEmail(saveEmail: any):
-
-Esta função exibe um alerta para inserção de um endereço de e-mail.
-saveEmail: É uma função que parece ser responsável por salvar o e-mail (possivelmente em algum tipo de armazenamento de dados).
-A função Swal.fire cria uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email.
-
-Em seguida, verifica-se se um e-mail foi inserido. Se sim, a função saveEmail é chamada para salvar o e-mail. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando a função ToastSuccess.
+   - `AlertAddEmail`: Utiliza o `Swal.fire` para exibir uma janela de alerta onde o usuário pode inserir um endereço de e-mail. O valor inserido é armazenado na variável email. Dependendo do resultado dessa operação, uma notificação de sucesso ou erro é exibida usando 
+   a função ToastSucces
 
    <h3 align="left">✅ Screen </h3>
-
+   
+   Esse arquivo é responsável pelo controle do dimensionamento da janela a ser exibida, contém  uma função chamada `useWindowSize` que permite obter o tamanho atual da janela do navegador, e se atualizará automaticamente quando o usuário redimensionar a janela.
 
 🔗 links interessantes:
 
