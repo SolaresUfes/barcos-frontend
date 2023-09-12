@@ -57,15 +57,39 @@ Você pode começar a editar a página modificando `pages/index.tsx` que se loca
   Este é um componente funcional React chamado CardDisplayData, ele contém: 
   
   - `Interface CardDisplayDataProps`: Define um tipo de interface para as propriedades que queremos do nosso braco. Essa interface especifica quais propriedades podem ser passadas para o componente, bem como seus tipos.
-  - `Função CardDisplayData`: Renderiza uma representação visual dos dados do barco com cada propriedade contendo um rótulo de unidade de medida. As propriedades são inicializadas com valores padrão, caso não sejam fornecidas quando o componente é usado.
-
+  - `Função CardDisplayData`: Renderiza uma representação visual dos dados do barco com cada propriedade contendo um rótulo de unidade de medida associado a ela. As propriedades são inicializadas com valores padrão, caso não sejam fornecidas quando o componente é 
+  usado.
   
   <h3 align="left">✅ Chart </h3>
+  
+  Este é um componente funcional React chamado Chart, ele contém a definição de um gráfico de linha usando a biblioteca `Carbon Charts` e o renderiza com base nos dados fornecidos através das props data. O gráfico é configurado usando o objeto options e é estilizado 
+  com classes CSS.
+
   <h3 align="left">✅ Chat </h3>
+  
+  Este é um componente funcional React chamado Chat, ele renderiza uma interface de chat interativo (chat-bot) permitindo que o usuário envie perguntas para um servidor, que processa a pergunta e envia uma resposta de volta. A interface do chat inclui mensagens de 
+  perguntas e respostas, um campo de entrada de texto para as perguntas e um botão de envio. Também há um botão de abertura/fechamento do chat quando ele está minimizado. Neste momento essa funcionalidade do componente esta em teste e o nosso objetivo com ele está 
+  relacionado a ajudar a equipe de telemetria nas provas do DSB, onde ele irá fornecer informações confiáveis a respeito do estado do barco e com isso, a nossa equipe irá tomar decisões melhores em relação ao estado do barco e do tipo de prova visando o melhor 
+  desempenho possível.
+  
   <h3 align="left">✅ Dropdown </h3>
+  
+  Este é um componente funcional React chamado Dropdown, ele cria uma lista suspensa que permite ao usuário selecionar um piloto. Quando uma seleção é feita, a função onChange (fornecida como prop) é chamada com o novo valor selecionado e ao final, teremos os dados 
+  (do barco) referente a um específico piloto para futuras análises de dados.
+  
   <h3 align="left">✅ Sidebar </h3>
+  
+  Este é um componente funcional React chamado Dropdown, ele representa uma barra lateral de navegação presente na tela do frontend que pode ser aberta/fechada com um clique em um ícone de menu. Ela inclui opções de navegação, um botão para iniciar/parar a gravação e 
+  um botão para deslogar da página.
+  
   <h3 align="left">✅ ThemeToggle </h3>
+  
+  Este é um componente funcional React chamado Dropdown, ele cria um botão que permite ao usuário alternar entre os modos claro e escuro do tema no canto superior direito da página. Ele verifica se o componente está montado antes de renderizar para evitar possíveis  
+  problemas durante a inicialização. Quando o botão é clicado, ele chama a função para trocar o tema, e exibe o ícone correspondente ao tema atual.
+  
   <h3 align="left">✅ UsersCard </h3>
+  
+   Este é um componente funcional React chamado UsersCard, ele representa uma janela de exibição, adição e remoção de usuários autorizados onde cada um deles é representado com seu email e um ícone de lixeira para remoção.
 
 
 --- 
