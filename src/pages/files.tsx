@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { deleteFile, getFile, listFiles } from "@/firebase/functions/storage";
 import { AiOutlineDownload, AiOutlineDelete } from "react-icons/ai";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Files() {
   const [files, setFiles] = useState<any>([]);
@@ -39,6 +40,9 @@ export default function Files() {
 
   return (
     <div className="flex flex-col h-screen w-full items-center justify-center py-2">
+      <div>
+        <ThemeToggle />
+      </div>
       <div>
         {files.map((file: string, index: number) => (
           <div key={index} className="flex justify-between items-center mb-2 gap-4">
