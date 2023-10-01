@@ -14,7 +14,7 @@ interface UsersCardProps {
 
 export function UsersCard({ users, addNewUser }: UsersCardProps) {
   return (
-    <div className="bg-white flex flex-col max-w-full h-1/2 rounded-md shadow-xl p-4">
+    <div className="bg-slate flex flex-col max-w-full h-1/2 rounded-md shadow-xl p-4">
       <div className="w-full flex items-center justify-center border-b-2">
         <h1 className="text-xl font-semibold">Usuários autorizados</h1>
         <AiOutlineUserAdd 
