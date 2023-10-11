@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { deleteFile, getFile, listFiles } from "@/firebase/functions/storage";
 import { AiOutlineDownload, AiOutlineDelete } from "react-icons/ai";
+import { orderBy } from "lodash";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Files() {
@@ -31,21 +32,36 @@ export default function Files() {
     async function getNameOfFiles() {
       const result = await listFiles();
       if (result !== undefined) {
-        console.log(result);
-        setFiles(result);
+        const arquivosOrdenados = orderBy(
+          result,
+          (f) => {
+            const date = new Date(f.split(".")[0]);
+            const dataPtBR = new Date(date.toLocaleString("pt-BR"));
+            return dataPtBR;
+          },
+          "desc"
+        );
+
+        setFiles(arquivosOrdenados);
       }
     }
     getNameOfFiles();
-  }, [])
+  }, []);
 
   return (
     <div className="flex flex-col h-screen w-full items-center justify-center py-2">
       <div>
         <ThemeToggle />
       </div>
-      <div>
+      <div className="mb-4">
+        <span>ARQUIVOS DO HISTÓRICO</span>
+      </div>
+      <div className="h-[70%] overflow-auto shadow-2xl shadow-gray-500 p-7">
         {files.map((file: string, index: number) => (
-          <div key={index} className="flex justify-between items-center mb-2 gap-4">
+          <div
+            key={index}
+            className="flex justify-between items-center mb-2 gap-4"
+          >
             <span>{file}</span>
             <div>
               <button
