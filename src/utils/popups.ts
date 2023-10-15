@@ -34,3 +34,20 @@ export async function AlertAddEmail(saveEmail: any) {
     else ToastSuccess("Erro ao cadastrar email!", "error");
   }
 }
+
+
+export async function AlertAddPilot(savePilot: any) {
+  const { value: name } = await Swal.fire({
+    title: 'Nome do piloto',
+    input: 'text',
+    inputPlaceholder: 'Digite o nome do piloto'
+  })
+  
+  if (name) {
+    const result = await savePilot("pilots", {
+      name: name,
+    });
+    if (result) ToastSuccess("piloto cadastrado com sucesso!", "success");
+    else ToastSuccess("Erro ao cadastrar piloto!", "error");
+  }
+}
