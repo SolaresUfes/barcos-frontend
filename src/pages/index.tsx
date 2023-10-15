@@ -65,10 +65,12 @@ export default function Home() {
 
     <div className='flex w-full flex-col items-center justify-center min-h-screen p-4 gap-4 overflow-y-auto'>
 
-      <div>
+      <div className="flex items-center">
+        <p>Piloto selecionado &rarr; </p>
         <Dropdown onChange={handleDropdownChange} />
         <ThemeToggle />
       </div>
+
       <Head>
         <title>Telemetria POENTE</title>
         <meta name="description" content="Exibindo dados em tempo real do barco POENTE" />
