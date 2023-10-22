@@ -6,16 +6,8 @@ interface DropdownProps {
   onChange: (selectedOption: string) => void;
 }
 
-
-
-
-
-
 const Dropdown: React.FC<DropdownProps> = ({ onChange }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
-
-
-
   const dropdownStyle: React.CSSProperties = {
     border: '1px solid #ccc',
     borderRadius: '9px',
@@ -32,8 +24,13 @@ const Dropdown: React.FC<DropdownProps> = ({ onChange }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
-    setSelectedOption(value);
-    onChange(value); // Chama a função onChange passada como prop para atualizar o estado no componente pai.
+
+    const confirmPilot = window.confirm(`Deseja selecionar o piloto ${value}?`);
+    //console.log(confirmPilot);
+    if (confirmPilot) {
+      setSelectedOption(value);
+      onChange(value); // Chama a função onChange passada como prop para atualizar o estado no componente pai.
+    }
   };
 
 
