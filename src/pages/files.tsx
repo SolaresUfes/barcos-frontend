@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { deleteFile, getFile, listFiles } from "@/firebase/functions/storage";
-import { AiOutlineDownload, AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDownload, AiOutlineDelete, AiOutlineBarChart } from "react-icons/ai";
 import { orderBy } from "lodash";
 import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
 
 export default function Files() {
   const [files, setFiles] = useState<any>([]);
@@ -70,6 +71,17 @@ export default function Files() {
                 title="Baixar arquivo"
               >
                 <AiOutlineDownload />
+              </button>
+              <button className="bg-green-500 text-white px-2 py-1 mr-2 rounded">
+                <Link
+                  href={{
+                    pathname: "/relatorios",
+                    query: { file: file },
+                  }}
+                  title={"Ver relatório"}
+                >
+                  <AiOutlineBarChart />
+                </Link>
               </button>
               <button
                 className="bg-red-500 text-white px-2 py-1 rounded"
