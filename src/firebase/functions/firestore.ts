@@ -1,7 +1,7 @@
-import { addDoc, collection, doc, getDocs, deleteDoc, query, onSnapshot, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, deleteDoc, query, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../index";
 
-export async function getAllInfoCollection(collectionName: string) {
+export async function getAllInfoCollection(collectionName: string): Promise<any> {
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));
     return querySnapshot?.docs?.map(doc => ({...doc.data(), ID: doc.id}));
@@ -42,6 +42,21 @@ export async function updateInfoCollection(collectionName: string, ID: string, d
     return true;
   }
   catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export async function updateDocument(
+  collectionName: string,
+  ID: string,
+  data: any
+) {
+  try {
+    await updateDoc(doc(db, collectionName, ID), data);
+    console.log("Document successfully updated!");
+    return true;
+  } catch (error) {
     console.log(error);
     return null;
   }
