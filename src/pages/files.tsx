@@ -1,13 +1,37 @@
-import React, { useEffect, useRef, useState } from "react";
-import { deleteFile, getFile, listFiles } from "@/firebase/functions/storage";
+import React, { useEffect, useState } from "react";
+import { deleteFile, getFile } from "@/firebase/functions/storage";
 import { AiOutlineDownload, AiOutlineDelete, AiOutlineBarChart } from "react-icons/ai";
-import { orderBy, sortBy } from "lodash";
+import { orderBy } from "lodash";
 import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
-import { getAllInfoCollection, removeInfoCollection, saveInfoCollection, updateDocument, updateInfoCollection } from "@/firebase/functions/firestore";
+import { getAllInfoCollection, removeInfoCollection, updateDocument } from "@/firebase/functions/firestore";
+import { Button, Box, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
+import { BsChatSquareTextFill } from "react-icons/bs";
+
 
 export default function Files() {
   const [files, setFiles] = useState<any>([]);
+  const [descricao, setDescricao] = useState<string>('');
+  const [fileId, setFileId] = useState<string | null>();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = (file: any) => {
+    setDescricao(file.descricao);
+    setFileId(file.ID);
+    setOpen(true);
+  };
+
+  const handleCancelar = () => {
+    setOpen(false);
+    setDescricao('');
+    setFileId(null);
+  };
+
+  async function handleAtualizar(){
+    await updateDocument("files", fileId as string, { descricao: descricao });
+    files.filter((f: any) => f.ID === fileId)[0].descricao = descricao;
+    setOpen(false);
+  };
   
   async function handleDownloadFile(fileName: string) {
     const result = await getFile(fileName);
@@ -96,6 +120,13 @@ export default function Files() {
             </div>
             <div>
               <button
+                className="text-white px-2 py-1 mr-2 rounded"
+                title="Descrição"
+                onClick={() => handleClickOpen(file)}
+              >
+                <BsChatSquareTextFill />
+              </button>
+              <button
                 className="bg-blue-500 text-white px-2 py-1 mr-2 rounded"
                 onClick={() => handleDownloadFile(file.nomeArquivoStorage)}
                 title="Baixar arquivo"
@@ -124,6 +155,29 @@ export default function Files() {
           </div>
         ))}
       </div>
+      <React.Fragment>
+        <Dialog open={open} onClose={handleCancelar}>
+          <DialogTitle>Descrição</DialogTitle>
+          <DialogContent>
+            <Box component="form" sx={{ p: 2, width: 350 }}>
+              <TextField
+                autoFocus
+                margin="dense"
+                multiline
+                // label="Email Address"
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
+                fullWidth
+                variant="standard"
+              />
+            </Box>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCancelar}>Cancelar</Button>
+            <Button onClick={handleAtualizar}>Atualizar</Button>
+          </DialogActions>
+        </Dialog>
+      </React.Fragment>
     </div>
   );
 }
