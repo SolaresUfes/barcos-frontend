@@ -120,7 +120,7 @@ export default function Files() {
             </div>
             <div>
               <button
-                className="text-white px-2 py-1 mr-2 rounded"
+                className="bg-gray-700 text-white px-2 py-1 mr-2 rounded"
                 title="Descrição"
                 onClick={() => handleClickOpen(file)}
               >
