@@ -114,8 +114,13 @@ export default function Files() {
                 onChange={(event) => handleChange(event, file, index)}
               >
                 <option value=""></option>
-                <option value="ProvaLonga">Prova Longa</option>
-                <option value="ProvaCurta">Prova Curta</option>
+                <option value="Rapida">PROVA RÁPIDA</option>
+                <option value="MatchRacing">MATCH RACING</option>
+                <option value="Manobra">MANOBRA</option>
+                <option value="Longa">LONGA</option>
+                <option value="Revezamento">REVEZAMENTO</option>
+                <option value="Slalon">SLALON</option>
+                <option value="Sprint">SPRINT</option>
               </select>
             </div>
             <div>
