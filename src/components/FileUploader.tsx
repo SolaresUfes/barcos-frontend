@@ -12,7 +12,7 @@ const FileUploader: React.FC = () => {
     setFile(newFile);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!file) {
       alert(
         "Nenhum arquivo selecionado. Por favor, selecione um arquivo antes de enviar."
@@ -22,8 +22,13 @@ const FileUploader: React.FC = () => {
         `tem certeza que quer enviar o arquivo ${file.name}`
       );
       if (confirmUploader) {
-        //TODO: Thiago, faça o envio para o backend dentro desse If
-        console.log("Submitting file:", file);
+        const formData = new FormData();
+        formData.append('file', file);
+        const response = await fetch("https://barcos-backend.onrender.com/uploadOTA", {
+          method: "POST",
+          body: formData,
+        });
+        console.log(response);
       }
     }
   };
