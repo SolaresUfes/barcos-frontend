@@ -18,21 +18,26 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
+        // Comentado para permitir acesso sem verificar a coleção "users"
+        /*
         const autorizatedUsers = await getAllInfoCollection("users");
         const userIsAutorizated = autorizatedUsers?.find((userAutorizated: any) => userAutorizated.email === user?.email);
-  
         if (userIsAutorizated) {
-         setIsAuthenticated(true);
-         setErroAutenticacao(false);
+          setIsAuthenticated(true);
+          setErroAutenticacao(false);
         } else {
           setErroAutenticacao(true);
         }
+        */
+        setIsAuthenticated(true); // Autentica automaticamente qualquer usuário
+        setErroAutenticacao(false);
       }
     });
     socket.on("recordStatus", (status: boolean) => {
       setRecordStatus(status);
     });
   }, []);
+
 
   if (!isAuthenticated) {
     return (
